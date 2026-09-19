@@ -311,6 +311,7 @@ code, pre {
 .game-prompt .prompt-code { margin-bottom: 0; }
 
 .game-stage {
+  position: relative;
   background: var(--card);
   border: var(--border);
   border-radius: var(--radius);
@@ -321,6 +322,13 @@ code, pre {
   min-height: 240px;
   display: flex; align-items: center; justify-content: center;
 }
+.game-stage .img-status {
+  position: absolute; left: 0; right: 0; bottom: 10px;
+  font-size: 12.5px; font-weight: 700; color: var(--muted);
+  pointer-events: none;
+}
+.game-stage .img-status .btn { pointer-events: auto; margin: 8px 5px 0; }
+.game-stage .img-status br + .btn { display: inline-block; }
 .game-stage img { max-width: 100%; max-height: 320px; }
 .game-stage .text-output {
   text-align: left; font-size: 15px; line-height: 1.8;
@@ -578,6 +586,9 @@ dialog.lb[open] { display: flex; flex-direction: column; animation: lbPop .18s e
   display: block; line-height: 0; font-family: inherit;
 }
 .hero-art .lb-trigger { width: 100%; }
+/* flex 容器（.game-stage/.cover）内 button 收缩 + img max-width:100% 形成循环尺寸依赖，
+   无固有尺寸（仅 viewBox）的 SVG 会被塌缩成 0 宽——与 hero 同理强制撑满打破循环 */
+.game-stage .lb-trigger, .prompt-card .cover .lb-trigger { width: 100%; }
 .model-card .thumbs .thumb { cursor: zoom-in; }
 .model-card .thumbs .thumb:hover { transform: translate(-2px, -2px); box-shadow: 3px 3px 0 var(--ink); }
 

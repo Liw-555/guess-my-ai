@@ -78,6 +78,50 @@ function shuffle(arr) {
 const hotStars = (n) => "🔥".repeat(n);
 
 /* ============================================================
+   图片加载健壮性（国内访问 github.io 偶发抖动的兜底）
+   1) 全站委托：任何 img 失败自动换 cache-bust 参数重试 1 次
+   2) 游戏页大图：加载状态提示 + 自动重试仍失败时的降级 UI（手动重试/换一题）
+   ============================================================ */
+function initImgRetry() {
+  /* error 事件不冒泡，用捕获阶段委托 */
+  document.addEventListener("error", (e) => {
+    const img = e.target;
+    if (!(img instanceof HTMLImageElement) || img.dataset.retried) return;
+    img.dataset.retried = "1";
+    img.src = img.src.split("#")[0].split("?")[0] + "?retry=" + Date.now();
+  }, true);
+}
+
+/* 游戏页大图守卫：img 所在 .game-stage 里需有 .img-status 状态条 */
+function imgGuard(img) {
+  const st = img.closest(".game-stage") && img.closest(".game-stage").querySelector(".img-status");
+  if (!st) return;
+  const done = () => st.remove();
+  const onErr = () => {
+    st.textContent = "⏳ 网络有点抖，自动重试中…";
+    setTimeout(() => {
+      if (img.complete && img.naturalWidth > 0) return done();
+      st.innerHTML = `😕 图片没加载出来（多半是网络抖动）<br>
+        <button class="btn btn-small" id="img-retry">🔄 再试一次</button>
+        <button class="btn btn-small btn-blue" id="img-skip">🔀 换一题</button>`;
+      $("#img-retry").addEventListener("click", () => {
+        st.textContent = "⏳ 重试中…";
+        img.dataset.retried = "";
+        img.src = img.src.split("?")[0] + "?r=" + Date.now();
+        img.addEventListener("load", done, { once: true });
+        img.addEventListener("error", () => { st.textContent = "😕 还是没成功，点「换一题」先玩别的吧"; }, { once: true });
+      });
+      $("#img-skip").addEventListener("click", () => { gameState = pickRound(); renderRound(); });
+    }, 1200);
+  };
+  if (img.complete && img.naturalWidth > 0) return done();
+  /* error 可能在守卫挂载前就已触发（如缓存的失败响应），complete 但宽为 0 = 已失败 */
+  if (img.complete) return onErr();
+  img.addEventListener("load", done, { once: true });
+  img.addEventListener("error", onErr, { once: true });
+}
+
+/* ============================================================
    图片灯箱（原生 <dialog>，零依赖）
    依据的最佳实践：
    - showModal() 自带焦点陷阱 / Esc 关闭 / 背景 inert，关闭后焦点还原触发元素
@@ -487,7 +531,8 @@ function renderRound() {
   const p = promptById(s.result.promptId);
   const g = store.global;
   const body = s.result.type === "svg"
-    ? `<button class="lb-trigger" data-lb='${lbJson({ src: s.result.asset, cap: "神秘模型输出 · 放大找「画风指纹」：先看连接关系，再看视角，最后看装饰" })}' aria-label="放大查看输出图（不显示来源，防止剧透）"><img src="${s.result.asset}" alt="神秘模型输出"></button>`
+    ? `<button class="lb-trigger" data-lb='${lbJson({ src: s.result.asset, cap: "神秘模型输出 · 放大找「画风指纹」：先看连接关系，再看视角，最后看装饰" })}' aria-label="放大查看输出图（不显示来源，防止剧透）"><img id="game-img" src="${s.result.asset}" alt="神秘模型输出"></button>
+       <div class="img-status" id="game-img-status">⏳ 鹈鹕正在蹬车运图…</div>`
     : `<div class="text-output">${escapeHtml(s.result.text)}</div>`;
 
   $("#game-area").innerHTML = `
@@ -515,6 +560,9 @@ function renderRound() {
   document.querySelectorAll(".option-btn").forEach((btn) =>
     btn.addEventListener("click", () => answer(btn.dataset.key))
   );
+
+  const gimg = $("#game-img");
+  if (gimg) imgGuard(gimg);
 }
 
 function answer(key) {
@@ -787,6 +835,7 @@ function viewAbout() {
 (async function init() {
   try {
     await loadData();
+    initImgRetry();
     lbInit();
     window.addEventListener("hashchange", router);
     router();
