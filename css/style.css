@@ -1,24 +1,33 @@
-/* ============================================
-   测测你的AI · 猜猜我是谁
-   设计方向：游戏化 + 轻新粗野主义（neubrutalism-lite）
-   厚边框 / 硬阴影 / 明快撞色 / 微动效
-   ============================================ */
 
-:root {
-  --bg: #FAF6EE;
-  --ink: #141414;
-  --card: #FFFFFF;
-  --yellow: #FFD43B;
-  --blue: #74C0FC;
-  --coral: #FFA8A8;
-  --green: #8CE99A;
-  --purple: #D0BFFF;
-  --muted: #6B6B6B;
-  --border: 3px solid var(--ink);
-  --shadow: 6px 6px 0 var(--ink);
-  --shadow-sm: 4px 4px 0 var(--ink);
-  --radius: 14px;
-  --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+/* ---------- 超长提示词折叠 ---------- */
+.prompt-more {
+  margin-top: 8px;
+}
+.prompt-more summary {
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--blue);
+  display: inline-block;
+  padding: 4px 10px;
+  background: #E7F5FF;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 2px 2px 0 var(--ink);
+  user-select: none;
+}
+.prompt-more summary:hover {
+  background: #D0EBFF;
+}
+.prompt-more[open] summary {
+  background: var(--yellow);
+  margin-bottom: 8px;
+}
+.prompt-ellipsis {
+  color: var(--muted);
+  font-weight: 700;
+}
+t: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }

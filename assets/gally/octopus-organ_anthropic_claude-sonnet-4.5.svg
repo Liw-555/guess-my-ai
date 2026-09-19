@@ -1,0 +1,127 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pipe Organ Pipes -->
+  <g id="pipes">
+    <!-- Back row of pipes (darker) -->
+    <rect x="100" y="50" width="30" height="150" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="140" y="70" width="30" height="130" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="180" y="40" width="30" height="160" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="220" y="60" width="30" height="140" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="260" y="30" width="30" height="170" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="300" y="50" width="30" height="150" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="340" y="35" width="30" height="165" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="380" y="55" width="30" height="145" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="420" y="45" width="30" height="155" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="460" y="65" width="30" height="135" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="500" y="50" width="30" height="150" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="540" y="70" width="30" height="130" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    <rect x="580" y="60" width="30" height="140" fill="#4a4a4a" stroke="#333" stroke-width="2"/>
+    
+    <!-- Pipe tops -->
+    <circle cx="115" cy="50" r="15" fill="#5a5a5a"/>
+    <circle cx="155" cy="70" r="15" fill="#5a5a5a"/>
+    <circle cx="195" cy="40" r="15" fill="#5a5a5a"/>
+    <circle cx="235" cy="60" r="15" fill="#5a5a5a"/>
+    <circle cx="275" cy="30" r="15" fill="#5a5a5a"/>
+    <circle cx="315" cy="50" r="15" fill="#5a5a5a"/>
+    <circle cx="355" cy="35" r="15" fill="#5a5a5a"/>
+    <circle cx="395" cy="55" r="15" fill="#5a5a5a"/>
+    <circle cx="435" cy="45" r="15" fill="#5a5a5a"/>
+    <circle cx="475" cy="65" r="15" fill="#5a5a5a"/>
+    <circle cx="515" cy="50" r="15" fill="#5a5a5a"/>
+    <circle cx="555" cy="70" r="15" fill="#5a5a5a"/>
+    <circle cx="595" cy="60" r="15" fill="#5a5a5a"/>
+  </g>
+  
+  <!-- Organ Console Base -->
+  <rect x="200" y="250" width="300" height="120" fill="#6b4423" stroke="#4a2f1a" stroke-width="3"/>
+  <rect x="210" y="260" width="280" height="100" fill="#8b5a3c" stroke="#4a2f1a" stroke-width="2"/>
+  
+  <!-- Keyboard -->
+  <g id="keyboard">
+    <!-- White keys -->
+    <rect x="220" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="242" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="264" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="286" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="308" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="330" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="352" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="374" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="396" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="418" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="440" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    <rect x="462" y="310" width="20" height="60" fill="#fff" stroke="#000" stroke-width="1"/>
+    
+    <!-- Black keys -->
+    <rect x="236" y="310" width="12" height="35" fill="#000"/>
+    <rect x="258" y="310" width="12" height="35" fill="#000"/>
+    <rect x="302" y="310" width="12" height="35" fill="#000"/>
+    <rect x="324" y="310" width="12" height="35" fill="#000"/>
+    <rect x="346" y="310" width="12" height="35" fill="#000"/>
+    <rect x="390" y="310" width="12" height="35" fill="#000"/>
+    <rect x="412" y="310" width="12" height="35" fill="#000"/>
+    <rect x="456" y="310" width="12" height="35" fill="#000"/>
+  </g>
+  
+  <!-- Octopus Body -->
+  <ellipse cx="400" cy="430" rx="80" ry="70" fill="#e64a8d" stroke="#c93d75" stroke-width="3"/>
+  
+  <!-- Octopus Head -->
+  <circle cx="400" cy="420" r="60" fill="#ff5fa1" stroke="#c93d75" stroke-width="3"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="380" cy="410" rx="15" ry="20" fill="#fff"/>
+  <ellipse cx="420" cy="410" rx="15" ry="20" fill="#fff"/>
+  <circle cx="380" cy="415" r="8" fill="#000"/>
+  <circle cx="420" cy="415" r="8" fill="#000"/>
+  <circle cx="383" cy="412" r="3" fill="#fff"/>
+  <circle cx="423" cy="412" r="3" fill="#fff"/>
+  
+  <!-- Tentacles -->
+  <!-- Tentacle 1 - left side reaching to keys -->
+  <path d="M 340 460 Q 280 450 240 340" fill="none" stroke="#e64a8d" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="240" cy="340" r="10" fill="#ff5fa1"/>
+  
+  <!-- Tentacle 2 - left side to keys -->
+  <path d="M 350 470 Q 300 460 270 350" fill="none" stroke="#e64a8d" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="270" cy="350" r="9" fill="#ff5fa1"/>
+  
+  <!-- Tentacle 3 - center left to keys -->
+  <path d="M 370 485 Q 340 480 320 355" fill="none" stroke="#e64a8d" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="320" cy="355" r="9" fill="#ff5fa1"/>
+  
+  <!-- Tentacle 4 - center to keys -->
+  <path d="M 390 490 Q 380 470 370 345" fill="none" stroke="#e64a8d" stroke-width="15" stroke-linecap="round"/>
+  <circle cx="370" cy="345" r="8" fill="#ff5fa1"/>
+  
+  <!-- Tentacle 5 - center right to keys -->
+  <path d="M 410 490 Q 420 470 430 345" fill="none" stroke="#e64a8d" stroke-width="15" stroke-linecap="round"/>
+  <circle cx="430" cy="345" r="8" fill="#ff5fa1"/>
+  
+  <!-- Tentacle 6 - right side to keys -->
+  <path d="M 430 485 Q 460 480 460 355" fill="none" stroke="#e64a8d" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="460" cy="355" r="9" fill="#ff5fa1"/>
+  
+  <!-- Tentacle 7 - right side reaching -->
+  <path d="M 450 470 Q 500 460 520 340" fill="none" stroke="#e64a8d" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="520" cy="340" r="9" fill="#ff5fa1"/>
+  
+  <!-- Tentacle 8 - far right -->
+  <path d="M 460 460 Q 520 450 540 350" fill="none" stroke="#e64a8d" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="540" cy="350" r="10" fill="#ff5fa1"/>
+  
+  <!-- Suction cups on tentacles -->
+  <circle cx="260" cy="400" r="5" fill="#ff5fa1" opacity="0.7"/>
+  <circle cx="275" cy="420" r="5" fill="#ff5fa1" opacity="0.7"/>
+  <circle cx="330" cy="420" r="5" fill="#ff5fa1" opacity="0.7"/>
+  <circle cx="345" cy="440" r="5" fill="#ff5fa1" opacity="0.7"/>
+  <circle cx="455" cy="440" r="5" fill="#ff5fa1" opacity="0.7"/>
+  <circle cx="470" cy="420" r="5" fill="#ff5fa1" opacity="0.7"/>
+  <circle cx="510" cy="400" r="5" fill="#ff5fa1" opacity="0.7"/>
+  <circle cx="525" cy="420" r="5" fill="#ff5fa1" opacity="0.7"/>
+  
+  <!-- Musical notes -->
+  <text x="150" y="280" font-size="30" fill="#333">♪</text>
+  <text x="600" y="250" font-size="35" fill="#333">♫</text>
+  <text x="650" y="300" font-size="30" fill="#333">♪</text>
+</svg>

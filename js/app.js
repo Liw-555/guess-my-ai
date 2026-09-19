@@ -91,6 +91,15 @@ async function loadData() {
 const promptById = (id) => DB.prompts.find((p) => p.id === id);
 const modelByKey = (key) => DB.models.find((m) => m.key === key);
 
+/* 超长提示词折叠显示：≤600 字直接展示，否则截断 + details 展开 */
+function promptBlock(p) {
+  const full = escapeHtml(p.prompt);
+  if (p.prompt.length <= 600) return `<code class="prompt-code">${full}</code>`;
+  const short = escapeHtml(p.prompt.slice(0, 600));
+  return `<code class="prompt-code">${short}<span class="prompt-ellipsis">……</span></code>
+    <details class="prompt-more"><summary>📜 这是 ${p.prompt.length} 字的超长提示词，点开查看全部 ${p.prompt.length} 字</summary><code class="prompt-code">${full}</code></details>`;
+}
+
 /* ---------- 路由 ---------- */
 const routes = { "": viewHome, prompts: viewPrompts, game: viewGame, gallery: viewGallery, submit: viewSubmit, about: viewAbout };
 
@@ -209,7 +218,7 @@ function viewPrompts() {
         ${p.coverLabel ? `<div class="meta">🖼️ ${escapeHtml(p.coverLabel)}</div>` : ""}
         <h3>${escapeHtml(p.title)} ${hotStars(p.hotness)}</h3>
         <div>${p.tags.map((t) => `<span class="badge b-blue">${escapeHtml(t)}</span>`).join("")}</div>
-        <code class="prompt-code">${escapeHtml(p.prompt)}</code>
+        ${promptBlock(p)}
         <p class="meta"><b>为什么测得准：</b>${escapeHtml(p.why)}</p>
         ${p.note ? `<div class="note">💡 ${escapeHtml(p.note)}</div>` : ""}
         <p class="origin"> 出处：<a href="${p.originUrl}" target="_blank" rel="noopener">${escapeHtml(p.origin)}</a></p>
@@ -277,7 +286,7 @@ function renderRound() {
     </div>
     <div class="card game-prompt">
       <div style="font-size:12.5px;color:var(--muted);font-weight:700;margin-bottom:6px;">它收到的提示词：</div>
-      <code class="prompt-code">${escapeHtml(p ? p.prompt : "")}</code>
+      ${promptBlock(p)}
       ${s.result.verified ? "" : `<div class="note" style="font-size:12px;background:#FFF3BF;border:1.5px solid var(--ink);border-radius:8px;padding:4px 10px;display:inline-block;">📜 社区流传案例（文字为转述）</div>`}
     </div>
     <div class="game-stage" id="game-stage">${body}</div>

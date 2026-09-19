@@ -1,0 +1,106 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Organ Pipes -->
+  <g id="pipes">
+    <rect x="100" y="50" width="10" height="200" fill="#8B4513" />
+    <rect x="120" y="40" width="10" height="210" fill="#8B4513" />
+    <rect x="140" y="30" width="10" height="220" fill="#8B4513" />
+    <rect x="160" y="20" width="10" height="230" fill="#8B4513" />
+    <rect x="180" y="10" width="10" height="240" fill="#8B4513" />
+    <rect x="200" y="0" width="10" height="250" fill="#8B4513" />
+    <rect x="220" y="0" width="10" height="250" fill="#8B4513" />
+    <rect x="240" y="10" width="10" height="240" fill="#8B4513" />
+    <rect x="260" y="20" width="10" height="230" fill="#8B4513" />
+    <rect x="280" y="30" width="10" height="220" fill="#8B4513" />
+    <rect x="300" y="40" width="10" height="210" fill="#8B4513" />
+    <rect x="320" y="50" width="10" height="200" fill="#8B4513" />
+    
+    <!-- Pipe tops -->
+    <path d="M100,50 L110,50 L110,40 L100,40 Z" fill="#A0522D" />
+    <path d="M120,40 L130,40 L130,30 L120,30 Z" fill="#A0522D" />
+    <path d="M140,30 L150,30 L150,20 L140,20 Z" fill="#A0522D" />
+    <path d="M160,20 L170,20 L170,10 L160,10 Z" fill="#A0522D" />
+    <path d="M180,10 L190,10 L190,0 L180,0 Z" fill="#A0522D" />
+    <path d="M200,0 L210,0 L210,-10 L200,-10 Z" fill="#A0522D" />
+    <path d="M220,0 L230,0 L230,-10 L220,-10 Z" fill="#A0522D" />
+    <path d="M240,10 L250,10 L250,0 L240,0 Z" fill="#A0522D" />
+    <path d="M260,20 L270,20 L270,10 L260,10 Z" fill="#A0522D" />
+    <path d="M280,30 L290,30 L290,20 L280,20 Z" fill="#A0522D" />
+    <path d="M300,40 L310,40 L310,30 L300,30 Z" fill="#A0522D" />
+    <path d="M320,50 L330,50 L330,40 L320,40 Z" fill="#A0522D" />
+  </g>
+
+  <!-- Organ Structure -->
+  <rect x="95" y="250" width="240" height="15" fill="#8B4513" />
+  <rect x="90" y="265" width="250" height="285" fill="#D2B48C" />
+  <rect x="100" y="550" width="230" height="25" fill="#8B4513" />
+  
+  <!-- Keyboard -->
+  <g id="keyboard">
+    <!-- White keys -->
+    <rect x="110" y="400" width="25" height="100" fill="white" stroke="#333" stroke-width="0.5" />
+    <rect x="135" y="400" width="25" height="100" fill="white" stroke="#333" stroke-width="0.5" />
+    <rect x="160" y="400" width="25" height="100" fill="white" stroke="#333" stroke-width="0.5" />
+    <rect x="185" y="400" width="25" height="100" fill="white" stroke="#333" stroke-width="0.5" />
+    <rect x="210" y="400" width="25" height="100" fill="white" stroke="#333" stroke-width="0.5" />
+    <rect x="235" y="400" width="25" height="100" fill="white" stroke="#333" stroke-width="0.5" />
+    <rect x="260" y="400" width="25" height="100" fill="white" stroke="#333" stroke-width="0.5" />
+    <rect x="285" y="400" width="25" height="100" fill="white" stroke="#333" stroke-width="0.5" />
+    <rect x="310" y="400" width="25" height="100" fill="white" stroke="#333" stroke-width="0.5" />
+    <rect x="335" y="400" width="25" height="100" fill="white" stroke="#333" stroke-width="0.5" />
+    
+    <!-- Black keys -->
+    <rect x="127" y="400" width="15" height="60" fill="black" rx="2" />
+    <rect x="152" y="400" width="15" height="60" fill="black" rx="2" />
+    <rect x="202" y="400" width="15" height="60" fill="black" rx="2" />
+    <rect x="227" y="400" width="15" height="60" fill="black" rx="2" />
+    <rect x="252" y="400" width="15" height="60" fill="black" rx="2" />
+    <rect x="277" y="400" width="15" height="60" fill="black" rx="2" />
+    <rect x="302" y="400" width="15" height="60" fill="black" rx="2" />
+  </g>
+
+  <!-- Stops -->
+  <g id="stops">
+    <rect x="80" y="450" width="10" height="40" fill="#8B4513" />
+    <circle cx="85" cy="470" r="8" fill="#A0522D" />
+    <rect x="80" y="500" width="10" height="40" fill="#8B4513" />
+    <circle cx="85" cy="520" r="8" fill="#A0522D" />
+    <rect x="360" y="450" width="10" height="40" fill="#8B4513" />
+    <circle cx="365" cy="470" r="8" fill="#A0522D" />
+    <rect x="360" y="500" width="10" height="40" fill="#8B4513" />
+    <circle cx="365" cy="520" r="8" fill="#A0522D" />
+  </g>
+
+  <!-- Octopus -->
+  <g id="octopus" transform="translate(220, 350)">
+    <!-- Head -->
+    <circle cx="0" cy="0" r="40" fill="#FF69B4" stroke="#333" stroke-width="1.5" />
+    
+    <!-- Tentacles -->
+    <!-- Left stops -->
+    <path d="M 0,0 Q -20,50 -50,70 Q -60,80 -70,120" fill="none" stroke="#FF69B4" stroke-width="12" stroke-linecap="round" />
+    <path d="M 0,0 Q -30,60 -55,90 Q -70,110 -80,150" fill="none" stroke="#FF69B4" stroke-width="10" stroke-linecap="round" />
+    
+    <!-- Keyboard -->
+    <path d="M 0,0 Q -15,70 0,110 Q 10,130 25,150" fill="none" stroke="#FF69B4" stroke-width="12" stroke-linecap="round" />
+    <path d="M 0,0 Q 10,60 35,100 Q 50,120 65,140" fill="none" stroke="#FF69B4" stroke-width="10" stroke-linecap="round" />
+    <path d="M 0,0 Q 30,50 60,90 Q 75,110 90,130" fill="none" stroke="#FF69B4" stroke-width="12" stroke-linecap="round" />
+    
+    <!-- Right stops -->
+    <path d="M 0,0 Q 40,40 70,70 Q 85,85 100,120" fill="none" stroke="#FF69B4" stroke-width="10" stroke-linecap="round" />
+    <path d="M 0,0 Q 50,30 80,60 Q 95,75 110,110" fill="none" stroke="#FF69B4" stroke-width="12" stroke-linecap="round" />
+    <path d="M 0,0 Q 45,20 75,50 Q 90,65 105,100" fill="none" stroke="#FF69B4" stroke-width="10" stroke-linecap="round" />
+    
+    <!-- Suction cups on interacting tentacles -->
+    <circle cx="-70" cy="120" r="4" fill="#333" />
+    <circle cx="-80" cy="150" r="4" fill="#333" />
+    <circle cx="25" cy="150" r="4" fill="#333" />
+    <circle cx="65" cy="140" r="4" fill="#333" />
+    <circle cx="90" cy="130" r="4" fill="#333" />
+    <circle cx="100" cy="120" r="4" fill="#333" />
+    <circle cx="110" cy="110" r="4" fill="#333" />
+    <circle cx="105" cy="100" r="4" fill="#333" />
+  </g>
+
+  <!-- Organ Base -->
+  <rect x="90" y="575" width="250" height="25" fill="#8B4513" />
+</svg>

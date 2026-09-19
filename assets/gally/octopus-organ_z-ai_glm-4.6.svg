@@ -1,0 +1,214 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1a1a2e"/>
+  
+  <!-- Floor -->
+  <ellipse cx="400" cy="580" rx="380" ry="30" fill="#0f0f1e"/>
+  
+  <!-- Pipe Organ Structure -->
+  <!-- Main pipes -->
+  <g id="organ-pipes">
+    <!-- Large pipes -->
+    <rect x="150" y="100" width="40" height="320" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+    <rect x="200" y="80" width="40" height="340" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+    <rect x="250" y="60" width="40" height="360" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+    <rect x="300" y="70" width="40" height="350" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+    <rect x="350" y="90" width="40" height="330" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+    <rect x="400" y="100" width="40" height="320" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+    <rect x="450" y="85" width="40" height="335" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+    <rect x="500" y="75" width="40" height="345" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+    <rect x="550" y="95" width="40" height="325" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+    <rect x="600" y="105" width="40" height="315" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+    
+    <!-- Pipe tops -->
+    <ellipse cx="170" cy="100" rx="20" ry="8" fill="#d0d0d0"/>
+    <ellipse cx="220" cy="80" rx="20" ry="8" fill="#d0d0d0"/>
+    <ellipse cx="270" cy="60" rx="20" ry="8" fill="#d0d0d0"/>
+    <ellipse cx="320" cy="70" rx="20" ry="8" fill="#d0d0d0"/>
+    <ellipse cx="370" cy="90" rx="20" ry="8" fill="#d0d0d0"/>
+    <ellipse cx="420" cy="100" rx="20" ry="8" fill="#d0d0d0"/>
+    <ellipse cx="470" cy="85" rx="20" ry="8" fill="#d0d0d0"/>
+    <ellipse cx="520" cy="75" rx="20" ry="8" fill="#d0d0d0"/>
+    <ellipse cx="570" cy="95" rx="20" ry="8" fill="#d0d0d0"/>
+    <ellipse cx="620" cy="105" rx="20" ry="8" fill="#d0d0d0"/>
+  </g>
+  
+  <!-- Organ console -->
+  <rect x="120" y="420" width="560" height="120" fill="#4a3020" stroke="#2a1810" stroke-width="3"/>
+  <rect x="130" y="430" width="540" height="100" fill="#5a3825"/>
+  
+  <!-- Upper keyboard -->
+  <rect x="200" y="440" width="400" height="25" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <!-- White keys -->
+  <g id="white-keys-upper">
+    <rect x="200" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="214" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="228" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="242" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="256" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="270" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="284" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="298" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="312" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="326" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="340" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="354" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="368" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="382" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="396" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="410" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="424" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="438" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="452" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="466" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="480" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="494" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="508" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="522" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="536" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="550" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="564" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="578" y="440" width="14" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="592" y="440" width="8" height="25" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+  </g>
+  <!-- Black keys upper -->
+  <rect x="208" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="222" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="250" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="264" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="278" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="306" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="320" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="348" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="362" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="376" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="404" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="418" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="446" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="460" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="474" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="502" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="516" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="544" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="558" y="440" width="8" height="15" fill="#000000"/>
+  <rect x="572" y="440" width="8" height="15" fill="#000000"/>
+  
+  <!-- Lower keyboard -->
+  <rect x="200" y="475" width="400" height="35" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <!-- White keys lower -->
+  <g id="white-keys-lower">
+    <rect x="200" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="218" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="236" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="254" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="272" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="290" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="308" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="326" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="344" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="362" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="380" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="398" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="416" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="434" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="452" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="470" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="488" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="506" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="524" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="542" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="560" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+    <rect x="578" y="475" width="18" height="35" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+  </g>
+  <!-- Black keys lower -->
+  <rect x="210" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="228" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="264" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="282" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="300" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="336" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="354" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="390" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="408" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="426" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="462" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="480" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="516" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="534" y="475" width="10" height="20" fill="#000000"/>
+  <rect x="552" y="475" width="10" height="20" fill="#000000"/>
+  
+  <!-- Octopus -->
+  <g id="octopus">
+    <!-- Body -->
+    <ellipse cx="400" cy="380" rx="80" ry="70" fill="#ff6b6b" stroke="#cc5555" stroke-width="2"/>
+    
+    <!-- Head bulge -->
+    <ellipse cx="400" cy="350" rx="60" ry="50" fill="#ff7b7b"/>
+    
+    <!-- Eyes -->
+    <ellipse cx="370" cy="350" rx="20" ry="25" fill="#ffffff"/>
+    <ellipse cx="430" cy="350" rx="20" ry="25" fill="#ffffff"/>
+    <circle cx="372" cy="352" r="12" fill="#000000"/>
+    <circle cx="428" cy="352" r="12" fill="#000000"/>
+    <circle cx="374" cy="350" r="4" fill="#ffffff"/>
+    <circle cx="430" cy="350" r="4" fill="#ffffff"/>
+    
+    <!-- Happy mouth -->
+    <path d="M 380 380 Q 400 395 420 380" stroke="#cc5555" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Suction cups on body -->
+    <circle cx="380" cy="370" r="3" fill="#cc5555"/>
+    <circle cx="400" cy="365" r="3" fill="#cc5555"/>
+    <circle cx="420" cy="370" r="3" fill="#cc5555"/>
+    <circle cx="390" cy="385" r="3" fill="#cc5555"/>
+    <circle cx="410" cy="385" r="3" fill="#cc5555"/>
+    
+    <!-- Tentacle 1 - playing upper keyboard -->
+    <path d="M 340 400 Q 320 420 250 445 Q 240 448 235 452" stroke="#ff6b6b" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="235" cy="452" r="4" fill="#cc5555"/>
+    
+    <!-- Tentacle 2 - playing lower keyboard -->
+    <path d="M 360 420 Q 340 440 300 485 Q 295 490 290 495" stroke="#ff6b6b" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="290" cy="495" r="4" fill="#cc5555"/>
+    
+    <!-- Tentacle 3 - reaching to upper keyboard -->
+    <path d="M 380 430 Q 380 450 400 465 Q 405 468 410 470" stroke="#ff6b6b" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="410" cy="470" r="4" fill="#cc5555"/>
+    
+    <!-- Tentacle 4 - playing lower keyboard -->
+    <path d="M 420 430 Q 450 450 480 485 Q 485 490 490 495" stroke="#ff6b6b" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="490" cy="495" r="4" fill="#cc5555"/>
+    
+    <!-- Tentacle 5 - reaching to upper keyboard -->
+    <path d="M 440 410 Q 470 430 520 445 Q 525 448 530 452" stroke="#ff6b6b" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="530" cy="452" r="4" fill="#cc5555"/>
+    
+    <!-- Tentacle 6 - pulling a stop -->
+    <path d="M 460 400 Q 480 380 520 360 Q 525 358 530 357" stroke="#ff6b6b" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="530" cy="357" r="4" fill="#cc5555"/>
+    
+    <!-- Organ stops -->
+    <g id="stops">
+      <rect x="525" y="350" width="10" height="25" fill="#ffd700" stroke="#ccaa00" stroke-width="1"/>
+      <rect x="540" y="345" width="10" height="30" fill="#ffd700" stroke="#ccaa00" stroke-width="1"/>
+      <rect x="555" y="350" width="10" height="25" fill="#ffd700" stroke="#ccaa00" stroke-width="1"/>
+      <rect x="570" y="348" width="10" height="27" fill="#ffd700" stroke="#ccaa00" stroke-width="1"/>
+    </g>
+    
+    <!-- Tentacle 7 - on the floor -->
+    <path d="M 320 420 Q 280 450 240 500 Q 235 505 230 510" stroke="#ff6b6b" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="230" cy="510" r="4" fill="#cc5555"/>
+    
+    <!-- Tentacle 8 - on the floor -->
+    <path d="M 480 420 Q 520 450 560 500 Q 565 505 570 510" stroke="#ff6b6b" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="570" cy="510" r="4" fill="#cc5555"/>
+  </g>
+  
+  <!-- Musical notes floating -->
+  <g id="notes" opacity="0.8">
+    <text x="250" y="250" font-family="Arial" font-size="30" fill="#ffd700">♪</text>
+    <text x="350" y="200" font-family="Arial" font-size="25" fill="#ffd700">♫</text>
+    <text x="450" y="230" font-family="Arial" font-size="28" fill="#ffd700">♪</text>
+    <text x="550" y="180" font-family="Arial" font-size="32" fill="#ffd700">♬</text>
+  </g>
+</svg>

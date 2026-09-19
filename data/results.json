@@ -1,16 +1,95 @@
 {
   "models": [
-    { "key": "gpt-4o", "name": "GPT-4o", "vendor": "OpenAI" },
-    { "key": "gpt-4o-mini", "name": "GPT-4o mini", "vendor": "OpenAI" },
-    { "key": "o1-preview", "name": "o1-preview", "vendor": "OpenAI" },
-    { "key": "o1-mini", "name": "o1-mini", "vendor": "OpenAI" },
-    { "key": "claude-3-5-sonnet-20241022", "name": "Claude 3.5 Sonnet（10月版）", "vendor": "Anthropic" },
-    { "key": "claude-3-5-sonnet-20240620", "name": "Claude 3.5 Sonnet（6月版）", "vendor": "Anthropic" },
-    { "key": "gemini-1.5-pro-002", "name": "Gemini 1.5 Pro", "vendor": "Google" },
-    { "key": "gemini-1.5-flash-001", "name": "Gemini 1.5 Flash", "vendor": "Google" },
-    { "key": "gemini-1.5-flash-8b-001", "name": "Gemini 1.5 Flash-8B", "vendor": "Google" },
-    { "key": "llama-3.1-70b", "name": "Llama 3.1 70B", "vendor": "Meta / Cerebras" },
-    { "key": "llama-3.1-8b", "name": "Llama 3.1 8B", "vendor": "Meta / Cerebras" }
+    {
+      "key": "gpt-4o",
+      "name": "GPT-4o",
+      "vendor": "OpenAI"
+    },
+    {
+      "key": "gpt-4o-mini",
+      "name": "GPT-4o mini",
+      "vendor": "OpenAI"
+    },
+    {
+      "key": "o1-preview",
+      "name": "o1-preview",
+      "vendor": "OpenAI"
+    },
+    {
+      "key": "o1-mini",
+      "name": "o1-mini",
+      "vendor": "OpenAI"
+    },
+    {
+      "key": "claude-3-5-sonnet-20241022",
+      "name": "Claude 3.5 Sonnet（10月版）",
+      "vendor": "Anthropic"
+    },
+    {
+      "key": "claude-3-5-sonnet-20240620",
+      "name": "Claude 3.5 Sonnet（6月版）",
+      "vendor": "Anthropic"
+    },
+    {
+      "key": "gemini-1.5-pro-002",
+      "name": "Gemini 1.5 Pro",
+      "vendor": "Google"
+    },
+    {
+      "key": "gemini-1.5-flash-001",
+      "name": "Gemini 1.5 Flash",
+      "vendor": "Google"
+    },
+    {
+      "key": "gemini-1.5-flash-8b-001",
+      "name": "Gemini 1.5 Flash-8B",
+      "vendor": "Google"
+    },
+    {
+      "key": "llama-3.1-70b",
+      "name": "Llama 3.1 70B",
+      "vendor": "Meta / Cerebras"
+    },
+    {
+      "key": "llama-3.1-8b",
+      "name": "Llama 3.1 8B",
+      "vendor": "Meta / Cerebras"
+    },
+    {
+      "key": "gpt-5.6-sol",
+      "name": "GPT-5.6 Sol（网页版）",
+      "vendor": "OpenAI"
+    },
+    {
+      "key": "claude-sonnet-4.5",
+      "name": "Claude Sonnet 4.5",
+      "vendor": "Anthropic"
+    },
+    {
+      "key": "grok-code-fast-1",
+      "name": "Grok Code Fast 1",
+      "vendor": "xAI"
+    },
+    {
+      "key": "gemini-2.5-pro",
+      "name": "Gemini 2.5 Pro",
+      "vendor": "Google"
+    },
+    {
+      "key": "deepseek-v3.2-exp",
+      "name": "DeepSeek V3.2 Exp",
+      "vendor": "DeepSeek"
+    },
+    {
+      "key": "glm-4.6",
+      "name": "GLM-4.6",
+      "vendor": "Zhipu"
+    },
+    {
+      "key": "qwen3-vl-235b",
+      "name": "Qwen3-VL 235B (thinking)",
+      "vendor": "Alibaba"
+    }
   ],
   "results": [
     {
@@ -181,6 +260,97 @@
       "source": "o1 系列发布时展示的字符级推理案例，文字为节选转述，非逐字存档",
       "sourceUrl": "https://en.wikipedia.org/wiki/Strawberry_(AI_benchmark)",
       "note": "先思考再作答的模型把这道题做对了——但看输出你能认出它的风格吗？"
+    },
+    {
+      "id": "r14",
+      "promptId": "qin-airline",
+      "modelKey": "gpt-5.6-sol",
+      "modelName": "GPT-5.6 Sol（网页版）",
+      "date": "2026-09-19",
+      "type": "svg",
+      "asset": "assets/contributed/qin-airline-gpt56sol.svg",
+      "verified": true,
+      "source": "本站站长实测（网页版 ChatGPT，2026-09-19），完整 SVG 已存档",
+      "sourceUrl": "https://liw-555.github.io/guess-my-ai/#/prompts",
+      "note": "56 项约束逐项核对：糖果题 N=29（QIN-29）、记录板 7/9/8/0/0/4、密码锁 57、7.5°、127 步、8 天、5 只猫、96%、2/3、3 扇窗、strawberry 3 个 r——数学全对，承托链完整，双层递归方向正确"
+    },
+    {
+      "id": "r15",
+      "promptId": "octopus-organ",
+      "modelKey": "claude-sonnet-4.5",
+      "modelName": "Claude Sonnet 4.5",
+      "date": "2026-09-14",
+      "type": "svg",
+      "asset": "assets/gally/octopus-organ_anthropic_claude-sonnet-4.5.svg",
+      "verified": true,
+      "source": "gally.net pelican-alternatives 基准实测存档（2026-09-14，30 题 × 6 模型共 180 份输出）",
+      "sourceUrl": "https://gally.net/temp/20260914pelican-alternatives/about.html",
+      "note": "结构完整度高的学院派：腕足与键盘的对应关系交代得最清楚"
+    },
+    {
+      "id": "r16",
+      "promptId": "octopus-organ",
+      "modelKey": "grok-code-fast-1",
+      "modelName": "Grok Code Fast 1",
+      "date": "2026-09-14",
+      "type": "svg",
+      "asset": "assets/gally/octopus-organ_x-ai_grok-code-fast-1.svg",
+      "verified": true,
+      "source": "gally.net pelican-alternatives 基准实测存档（2026-09-14，30 题 × 6 模型共 180 份输出）",
+      "sourceUrl": "https://gally.net/temp/20260914pelican-alternatives/about.html",
+      "note": "代码最短（不到 3KB），走极简路线，形准但细节少"
+    },
+    {
+      "id": "r17",
+      "promptId": "octopus-organ",
+      "modelKey": "gemini-2.5-pro",
+      "modelName": "Gemini 2.5 Pro",
+      "date": "2026-09-14",
+      "type": "svg",
+      "asset": "assets/gally/octopus-organ_google_gemini-2.5-pro.svg",
+      "verified": true,
+      "source": "gally.net pelican-alternatives 基准实测存档（2026-09-14，30 题 × 6 模型共 180 份输出）",
+      "sourceUrl": "https://gally.net/temp/20260914pelican-alternatives/about.html",
+      "note": "构图饱满，管风琴管列层次分明"
+    },
+    {
+      "id": "r18",
+      "promptId": "octopus-organ",
+      "modelKey": "deepseek-v3.2-exp",
+      "modelName": "DeepSeek V3.2 Exp",
+      "date": "2026-09-14",
+      "type": "svg",
+      "asset": "assets/gally/octopus-organ_deepseek_deepseek-v3.2-exp.svg",
+      "verified": true,
+      "source": "gally.net pelican-alternatives 基准实测存档（2026-09-14，30 题 × 6 模型共 180 份输出）",
+      "sourceUrl": "https://gally.net/temp/20260914pelican-alternatives/about.html",
+      "note": "紧凑型输出，元素齐全"
+    },
+    {
+      "id": "r19",
+      "promptId": "octopus-organ",
+      "modelKey": "glm-4.6",
+      "modelName": "GLM-4.6",
+      "date": "2026-09-14",
+      "type": "svg",
+      "asset": "assets/gally/octopus-organ_z-ai_glm-4.6.svg",
+      "verified": true,
+      "source": "gally.net pelican-alternatives 基准实测存档（2026-09-14，30 题 × 6 模型共 180 份输出）",
+      "sourceUrl": "https://gally.net/temp/20260914pelican-alternatives/about.html",
+      "note": "最大的一张（14KB），细节堆得最满"
+    },
+    {
+      "id": "r20",
+      "promptId": "octopus-organ",
+      "modelKey": "qwen3-vl-235b",
+      "modelName": "Qwen3-VL 235B (thinking)",
+      "date": "2026-09-14",
+      "type": "svg",
+      "asset": "assets/gally/octopus-organ_qwen_qwen3-vl-235b-a22b-thinking.svg",
+      "verified": true,
+      "source": "gally.net pelican-alternatives 基准实测存档（2026-09-14，30 题 × 6 模型共 180 份输出）",
+      "sourceUrl": "https://gally.net/temp/20260914pelican-alternatives/about.html",
+      "note": "思考型模型，布局有设计感"
     }
   ]
 }
