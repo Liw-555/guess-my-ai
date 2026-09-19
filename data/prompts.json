@@ -324,24 +324,25 @@
       "origin": "X（Twitter）社区挑战题：骑高低轮自行车的同时抛接恰好三个茶壶——三个任务共享八条腕足",
       "originUrl": "https://x.com/Vi0l3t_Park3r/status/2098431871696637972",
       "why": "penny-farthing 的前大轮后小轮本身就考验结构，再加「恰好三个茶壶」的数量约束和骑行动作的矛盾（手要扶车把还是抛壶？），三重约束一起考。",
-      "note": "X（Twitter）社区流传，经 Grok 检索收集；帖子链接未能逐条人工核验，按社区流传分级；变体玩法：把茶壶换成茶杯、灯泡等继续防背题",
+      "note": "✅ 已人工核实验证（2026-09-11，作者 Violet Parker @Vi0l3t_Park3r）：帖子真实存在，提示词与题库逐字一致；原帖为纯文本挑战题，未附带 SVG 输出。变体玩法：把茶壶换成茶杯、灯泡等继续防背题。",
       "cover": null
     },
     {
       "id": "giraffe-cabriolet",
       "title": "长颈鹿开敞篷跑车看日落",
-      "prompt": "Generate dynamic SVG code for a side-view sunset scene of a cool giraffe driving a cabriolet sports car along a mountain highway.",
+      "prompt": "Generate dynamic SVG code for a side-view sunset scene of a cool giraffe driving a cabriolet sports car along a mountain highway.\n\nCamera & Motion: Fixed side-profile camera on the car. Use looping CSS animations moving elements right-to-left to simulate continuous forward motion.\n\nParallax Layers (Speed Order):\nForeground (Fastest): Trees/poles passing in front of the road.\nMidground (Fast): Trees/poles behind the road.\nBackground 1 (Slow): Near mountain range.\nBackground 2 (Slowest): Far mountain range + glowing sunset sky.\n\n3D Effects & Depth: Use SVG linear gradients, drop shadows, ambient wheel reflections, edge-lighting highlights from the sun, and wheel spin rotation.\n\nOutput: Self-contained SVG code only, with inline CSS keyframe animations.",
       "tags": [
         "SVG",
         "动画",
         "进阶"
       ],
       "hotness": 4,
-      "origin": "X（Twitter）流传的进阶版：侧视图日落场景 + 山路行驶，完整版还带相机跟随、远景视差滚动、3D 纵深效果等约束",
+      "origin": "X（Twitter）社区流传的动态 SVG benchmark：侧视图日落场景 + 山路行驶 + 视差滚动 + 3D 纵深",
       "originUrl": "https://x.com/erenciracioglu/status/2083918107643408451",
       "why": "比静态 SVG 难一档：长颈鹿脖子要伸出敞篷且随车身姿态摆动，日落渐变+山景层次考验配色功力，动态版还要看视差滚动是否做出来。",
-      "note": "X（Twitter）社区流传，经 Grok 检索收集；帖子链接未能逐条人工核验，按社区流传分级；建议先测静态版，再加一句「添加视差滚动动画」测动态",
-      "cover": null
+      "note": "✅ 已人工核实验证（2026-08-02，作者 Eren C @erenciracioglu）：帖子真实存在，提示词已按原帖完整录入；原帖附带 4 个模型动态输出演示视频，本站保存了其中 3 帧作为参考。建议先测完整版，若模型无法一次完成，可拆成「静态版」+「添加视差滚动动画」两步。",
+      "cover": "assets/giraffe-demo/demo1.jpg",
+      "coverLabel": "原帖动态演示帧之一（X @erenciracioglu，具体模型未标注）"
     }
   ]
 }

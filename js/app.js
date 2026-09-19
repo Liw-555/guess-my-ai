@@ -370,9 +370,21 @@ function router() {
 /* ============================================================
    视图：首页
    ============================================================ */
+/* 首页大图：同一会话内保持稳定（路由往返不换图），新会话才随机换新 */
+function pickHeroArt(featured) {
+  if (!featured.length) return null;
+  let saved = "";
+  try { saved = sessionStorage.getItem("heroArt") || ""; } catch (e) {}
+  const hit = saved && featured.find((r) => r.asset === saved);
+  if (hit) return hit;
+  const pick = featured[Math.floor(Math.random() * featured.length)];
+  try { sessionStorage.setItem("heroArt", pick.asset); } catch (e) {}
+  return pick;
+}
+
 function viewHome() {
   const featured = DB.results.filter((r) => r.type === "svg" && r.promptId === "pelican-svg");
-  const heroArt = featured[Math.floor(Math.random() * featured.length)];
+  const heroArt = pickHeroArt(featured);
   const heroSrc = heroArt ? heroArt.source.split("（")[0] : "simonw/pelican-bicycle";
   const g = store.global;
   app().innerHTML = `
@@ -390,7 +402,7 @@ function viewHome() {
         <button class="lb-trigger" data-lb='${lbJson({ src: heroArt.asset, cap: `首页大图 · 真实模型输出（来源：${heroSrc}）`, href: heroArt.asset })}' aria-label="放大查看这张鹈鹕图">
           <img src="${heroArt.asset}" alt="某模型生成的鹈鹕骑自行车 SVG" loading="lazy">
         </button>
-        <figcaption>↑ 这张真实模型输出出自谁手？<a href="#/game">来猜 →</a>（来源：${escapeHtml(heroSrc)}）· <b>点击图片可放大</b></figcaption>
+        <figcaption>↑ 这张真实模型输出出自谁手？<a href="#/game?asset=${encodeURIComponent(heroArt.asset)}">来猜 →</a>（来源：${escapeHtml(heroSrc)}）· <b>点击图片可放大</b></figcaption>
       </figure>
     </section>
 
@@ -513,8 +525,8 @@ function viewPrompts() {
    ============================================================ */
 let gameState = null;
 
-function pickRound() {
-  const result = DB.results[Math.floor(Math.random() * DB.results.length)];
+/* 由指定结果构造一局（干扰项策略与随机出题一致） */
+function roundFor(result) {
   const correctModel = modelByKey(result.modelKey);
   // 干扰项：70% 概率优先同厂商（更难），其余随机
   const sameVendor = DB.models.filter((m) => m.vendor === correctModel.vendor && m.key !== result.modelKey);
@@ -524,6 +536,10 @@ function pickRound() {
   shuffle(sameVendor).slice(0, wantSame).forEach((m) => distractors.push(m));
   shuffle(others).slice(0, 3 - distractors.length).forEach((m) => distractors.push(m));
   return { result, options: shuffle([correctModel, ...distractors]), answered: false };
+}
+
+function pickRound() {
+  return roundFor(DB.results[Math.floor(Math.random() * DB.results.length)]);
 }
 
 function renderRound() {
@@ -603,7 +619,14 @@ function answer(key) {
 }
 
 function viewGame() {
-  gameState = pickRound();
+  /* 支持 #/game?asset=xxx：首页"来猜 →"直达这张图（保持所见即所猜），否则全库随机 */
+  const wanted = (location.hash.match(/[?&]asset=([^&]+)/) || [])[1];
+  let first = null;
+  if (wanted) {
+    const r = DB.results.find((x) => x.asset === decodeURIComponent(wanted));
+    if (r) first = r;
+  }
+  gameState = first ? roundFor(first) : pickRound();
   app().innerHTML = `
     <div class="game-wrap">
       <h2 class="page-title">🕵️ 猜猜我是谁？</h2>
