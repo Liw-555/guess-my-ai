@@ -1,0 +1,82 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Typewriter -->
+  <g id="typewriter">
+    <!-- Typewriter base -->
+    <rect x="450" y="400" width="200" height="20" fill="#2c3e50"/>
+    <rect x="460" y="420" width="180" height="80" fill="#34495e" rx="5"/>
+    
+    <!-- Typewriter body -->
+    <rect x="470" y="340" width="160" height="60" fill="#455a64" rx="3"/>
+    
+    <!-- Paper -->
+    <rect x="510" y="260" width="80" height="100" fill="#ffffff" stroke="#000" stroke-width="2"/>
+    <line x1="520" y1="280" x2="580" y2="280" stroke="#000" stroke-width="1"/>
+    <line x1="520" y1="290" x2="580" y2="290" stroke="#000" stroke-width="1"/>
+    <line x1="520" y1="300" x2="580" y2="300" stroke="#000" stroke-width="1"/>
+    
+    <!-- Paper roller -->
+    <rect x="505" y="250" width="90" height="15" fill="#2c3e50" rx="3"/>
+    
+    <!-- Keys -->
+    <g id="keys">
+      <circle cx="490" cy="450" r="6" fill="#ecf0f1"/>
+      <circle cx="510" cy="450" r="6" fill="#ecf0f1"/>
+      <circle cx="530" cy="450" r="6" fill="#ecf0f1"/>
+      <circle cx="550" cy="450" r="6" fill="#ecf0f1"/>
+      <circle cx="570" cy="450" r="6" fill="#ecf0f1"/>
+      <circle cx="590" cy="450" r="6" fill="#ecf0f1"/>
+      <circle cx="610" cy="450" r="6" fill="#ecf0f1"/>
+      <circle cx="500" cy="470" r="6" fill="#ecf0f1"/>
+      <circle cx="520" cy="470" r="6" fill="#ecf0f1"/>
+      <circle cx="540" cy="470" r="6" fill="#ecf0f1"/>
+      <circle cx="560" cy="470" r="6" fill="#ecf0f1"/>
+      <circle cx="580" cy="470" r="6" fill="#ecf0f1"/>
+      <circle cx="600" cy="470" r="6" fill="#ecf0f1"/>
+    </g>
+  </g>
+  
+  <!-- Elephant -->
+  <g id="elephant">
+    <!-- Body -->
+    <ellipse cx="250" cy="420" rx="120" ry="90" fill="#7f8c8d"/>
+    
+    <!-- Head -->
+    <ellipse cx="200" cy="320" rx="70" ry="65" fill="#95a5a6"/>
+    
+    <!-- Ears -->
+    <ellipse cx="150" cy="300" rx="45" ry="60" fill="#7f8c8d"/>
+    <ellipse cx="250" cy="300" rx="45" ry="60" fill="#7f8c8d"/>
+    <ellipse cx="150" cy="300" rx="30" ry="45" fill="#95a5a6"/>
+    <ellipse cx="250" cy="300" rx="30" ry="45" fill="#95a5a6"/>
+    
+    <!-- Trunk - extended toward typewriter -->
+    <path d="M 180 350 Q 200 370, 220 380 Q 280 400, 340 420 Q 400 430, 450 445" 
+          fill="none" stroke="#95a5a6" stroke-width="35" stroke-linecap="round"/>
+    <path d="M 180 350 Q 200 370, 220 380 Q 280 400, 340 420 Q 400 430, 450 445" 
+          fill="none" stroke="#7f8c8d" stroke-width="28" stroke-linecap="round"/>
+    
+    <!-- Trunk tip on keys -->
+    <ellipse cx="450" cy="445" rx="20" ry="15" fill="#95a5a6"/>
+    
+    <!-- Eyes -->
+    <circle cx="180" cy="310" r="8" fill="#2c3e50"/>
+    <circle cx="182" cy="308" r="3" fill="#fff"/>
+    
+    <!-- Legs -->
+    <rect x="190" y="480" width="35" height="80" fill="#7f8c8d" rx="5"/>
+    <rect x="250" y="480" width="35" height="80" fill="#7f8c8d" rx="5"/>
+    <rect x="310" y="480" width="35" height="80" fill="#7f8c8d" rx="5"/>
+    <ellipse cx="207" cy="555" rx="20" ry="12" fill="#95a5a6"/>
+    <ellipse cx="267" cy="555" rx="20" ry="12" fill="#95a5a6"/>
+    <ellipse cx="327" cy="555" rx="20" ry="12" fill="#95a5a6"/>
+    
+    <!-- Tail -->
+    <path d="M 360 400 Q 390 410, 400 430" fill="none" stroke="#7f8c8d" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Tusk -->
+    <path d="M 175 345 Q 170 360, 175 370" fill="none" stroke="#ecf0f1" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Ground -->
+  <rect x="0" y="560" width="800" height="40" fill="#bdc3c7"/>
+</svg>

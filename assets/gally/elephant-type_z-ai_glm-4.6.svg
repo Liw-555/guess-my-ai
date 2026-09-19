@@ -1,0 +1,95 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f5f0e8"/>
+  
+  <!-- Desk -->
+  <rect x="50" y="220" width="300" height="60" fill="#8b7355" stroke="#6b5945" stroke-width="2"/>
+  <rect x="50" y="220" width="300" height="8" fill="#9b8365"/>
+  
+  <!-- Typewriter base -->
+  <rect x="140" y="180" width="120" height="40" rx="5" fill="#2c2c2c"/>
+  <rect x="140" y="175" width="120" height="8" fill="#1a1a1a"/>
+  
+  <!-- Typewriter roller -->
+  <rect x="145" y="165" width="110" height="10" rx="2" fill="#4a4a4a"/>
+  
+  <!-- Paper -->
+  <g transform="translate(180, 140)">
+    <rect x="0" y="0" width="60" height="80" fill="#ffffff" stroke="#cccccc" stroke-width="1"/>
+    <line x1="10" y1="15" x2="50" y2="15" stroke="#333333" stroke-width="1.5"/>
+    <line x1="10" y1="25" x2="45" y2="25" stroke="#333333" stroke-width="1.5"/>
+    <line x1="10" y1="35" x2="48" y2="35" stroke="#333333" stroke-width="1.5"/>
+    <line x1="10" y1="45" x2="40" y2="45" stroke="#333333" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Typewriter keys -->
+  <g id="key">
+    <rect x="0" y="0" width="8" height="8" rx="1" fill="#3a3a3a"/>
+  </g>
+  <use href="#key" x="150" y="195"/>
+  <use href="#key" x="162" y="195"/>
+  <use href="#key" x="174" y="195"/>
+  <use href="#key" x="186" y="195"/>
+  <use href="#key" x="198" y="195"/>
+  <use href="#key" x="210" y="195"/>
+  <use href="#key" x="222" y="195"/>
+  <use href="#key" x="234" y="195"/>
+  <use href="#key" x="246" y="195"/>
+  
+  <use href="#key" x="150" y="207"/>
+  <use href="#key" x="162" y="207"/>
+  <use href="#key" x="174" y="207"/>
+  <use href="#key" x="186" y="207"/>
+  <use href="#key" x="198" y="207"/>
+  <use href="#key" x="210" y="207"/>
+  <use href="#key" x="222" y="207"/>
+  <use href="#key" x="234" y="207"/>
+  <use href="#key" x="246" y="207"/>
+  
+  <!-- Elephant body -->
+  <ellipse cx="280" cy="180" rx="60" ry="70" fill="#7a6b5d"/>
+  
+  <!-- Elephant head -->
+  <ellipse cx="220" cy="160" rx="45" ry="50" fill="#8a7b6d"/>
+  
+  <!-- Elephant ear -->
+  <path d="M 180 140 Q 160 160, 165 190 Q 170 200, 190 195 Q 200 180, 195 160 Q 190 145, 180 140" 
+        fill="#9a8b7d" stroke="#7a6b5d" stroke-width="2"/>
+  
+  <!-- Eye -->
+  <circle cx="205" cy="155" r="5" fill="#2c2c2c"/>
+  <circle cx="206" cy="154" r="2" fill="#ffffff"/>
+  
+  <!-- Trunk (typing position) -->
+  <path d="M 235 175 Q 240 190, 230 205 Q 225 210, 220 208 Q 218 206, 220 204 Q 225 202, 228 195 Q 232 185, 235 175" 
+        fill="#8a7b6d" stroke="#7a6b5d" stroke-width="2"/>
+  
+  <!-- Trunk tip on keys -->
+  <ellipse cx="220" cy="207" rx="6" ry="4" fill="#8a7b6d"/>
+  
+  <!-- Front leg -->
+  <rect x="250" y="210" width="20" height="60" rx="8" fill="#7a6b5d"/>
+  <ellipse cx="260" cy="270" rx="12" ry="8" fill="#6a5b4d"/>
+  
+  <!-- Back leg -->
+  <rect x="290" y="210" width="20" height="60" rx="8" fill="#7a6b5d"/>
+  <ellipse cx="300" cy="270" rx="12" ry="8" fill="#6a5b4d"/>
+  
+  <!-- Tail -->
+  <path d="M 335 180 Q 355 175, 360 185 Q 365 195, 355 200" 
+        fill="none" stroke="#7a6b5d" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Typewriter carriage return arm -->
+  <rect x="270" y="170" width="30" height="4" rx="2" fill="#4a4a4a"/>
+  <circle cx="295" cy="172" r="3" fill="#3a3a3a"/>
+  
+  <!-- Shadow on desk -->
+  <ellipse cx="200" cy="275" rx="80" ry="8" fill="#000000" opacity="0.2"/>
+  
+  <!-- Decorative element - small ink bottle -->
+  <g transform="translate(100, 200)">
+    <rect x="0" y="10" width="15" height="20" rx="2" fill="#2c3e50"/>
+    <rect x="3" y="5" width="9" height="8" fill="#34495e"/>
+    <rect x="5" y="0" width="5" height="6" fill="#2c3e50"/>
+  </g>
+</svg>

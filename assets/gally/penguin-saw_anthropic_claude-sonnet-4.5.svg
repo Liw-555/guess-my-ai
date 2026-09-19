@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Sky background -->
+  <rect width="800" height="600" fill="#87CEEB"/>
+  
+  <!-- Penguin body -->
+  <ellipse cx="400" cy="350" rx="80" ry="110" fill="#000"/>
+  
+  <!-- Penguin belly -->
+  <ellipse cx="400" cy="360" rx="50" ry="80" fill="#FFF"/>
+  
+  <!-- Penguin head -->
+  <circle cx="400" cy="220" r="60" fill="#000"/>
+  
+  <!-- Penguin face -->
+  <ellipse cx="400" cy="230" rx="45" ry="40" fill="#FFF"/>
+  
+  <!-- Eyes -->
+  <circle cx="385" cy="215" r="8" fill="#000"/>
+  <circle cx="415" cy="215" r="8" fill="#000"/>
+  <circle cx="387" cy="213" r="3" fill="#FFF"/>
+  <circle cx="417" cy="213" r="3" fill="#FFF"/>
+  
+  <!-- Beak -->
+  <polygon points="400,225 385,235 400,240 415,235" fill="#FFA500"/>
+  
+  <!-- Left wing/flipper -->
+  <ellipse cx="340" cy="320" rx="25" ry="70" fill="#000" transform="rotate(-30 340 320)"/>
+  
+  <!-- Right wing/flipper -->
+  <ellipse cx="460" cy="320" rx="25" ry="70" fill="#000" transform="rotate(30 460 320)"/>
+  
+  <!-- Feet -->
+  <ellipse cx="380" cy="460" rx="25" ry="15" fill="#FFA500"/>
+  <ellipse cx="420" cy="460" rx="25" ry="15" fill="#FFA500"/>
+  
+  <!-- Chainsaw 1 (top right) -->
+  <g transform="translate(550, 100) rotate(45)">
+    <!-- Handle -->
+    <rect x="0" y="0" width="30" height="60" fill="#FF0000" rx="5"/>
+    <rect x="5" y="10" width="20" height="15" fill="#333"/>
+    <!-- Engine -->
+    <rect x="-5" y="35" width="40" height="35" fill="#666" rx="3"/>
+    <circle cx="15" cy="52" r="8" fill="#444"/>
+    <!-- Blade -->
+    <rect x="25" y="45" width="80" height="15" fill="#C0C0C0"/>
+    <rect x="25" y="47" width="80" height="11" fill="#E8E8E8"/>
+    <!-- Teeth -->
+    <polygon points="105,45 110,50 105,55" fill="#999"/>
+    <polygon points="95,45 100,50 95,55" fill="#999"/>
+    <polygon points="85,45 90,50 85,55" fill="#999"/>
+    <polygon points="75,45 80,50 75,55" fill="#999"/>
+  </g>
+  
+  <!-- Chainsaw 2 (top left) -->
+  <g transform="translate(250, 120) rotate(-45)">
+    <!-- Handle -->
+    <rect x="0" y="0" width="30" height="60" fill="#FF0000" rx="5"/>
+    <rect x="5" y="10" width="20" height="15" fill="#333"/>
+    <!-- Engine -->
+    <rect x="-5" y="35" width="40" height="35" fill="#666" rx="3"/>
+    <circle cx="15" cy="52" r="8" fill="#444"/>
+    <!-- Blade -->
+    <rect x="25" y="45" width="80" height="15" fill="#C0C0C0"/>
+    <rect x="25" y="47" width="80" height="11" fill="#E8E8E8"/>
+    <!-- Teeth -->
+    <polygon points="105,45 110,50 105,55" fill="#999"/>
+    <polygon points="95,45 100,50 95,55" fill="#999"/>
+    <polygon points="85,45 90,50 85,55" fill="#999"/>
+    <polygon points="75,45 80,50 75,55" fill="#999"/>
+  </g>
+  
+  <!-- Chainsaw 3 (middle) -->
+  <g transform="translate(380, 50) rotate(90)">
+    <!-- Handle -->
+    <rect x="0" y="0" width="30" height="60" fill="#FF0000" rx="5"/>
+    <rect x="5" y="10" width="20" height="15" fill="#333"/>
+    <!-- Engine -->
+    <rect x="-5" y="35" width="40" height="35" fill="#666" rx="3"/>
+    <circle cx="15" cy="52" r="8" fill="#444"/>
+    <!-- Blade -->
+    <rect x="25" y="45" width="80" height="15" fill="#C0C0C0"/>
+    <rect x="25" y="47" width="80" height="11" fill="#E8E8E8"/>
+    <!-- Teeth -->
+    <polygon points="105,45 110,50 105,55" fill="#999"/>
+    <polygon points="95,45 100,50 95,55" fill="#999"/>
+    <polygon points="85,45 90,50 85,55" fill="#999"/>
+    <polygon points="75,45 80,50 75,55" fill="#999"/>
+  </g>
+  
+  <!-- Motion lines for juggling effect -->
+  <path d="M 280 150 Q 350 80 400 60" stroke="#DDD" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+  <path d="M 520 130 Q 450 80 400 60" stroke="#DDD" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+  <path d="M 280 150 Q 300 250 340 320" stroke="#DDD" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+  <path d="M 520 130 Q 500 250 460 320" stroke="#DDD" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+</svg>

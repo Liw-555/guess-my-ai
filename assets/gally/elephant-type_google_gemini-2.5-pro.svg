@@ -1,0 +1,58 @@
+<svg width="400" height="350" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" role="img">
+  <title id="title">An elephant typing on a typewriter</title>
+  
+  <!-- Group for the Typewriter -->
+  <g id="typewriter" transform="translate(50, 150)">
+    <!-- Typewriter Body -->
+    <path d="M 0 40 Q 0 20 20 20 H 260 Q 280 20 280 40 V 100 H 0 Z" fill="#20B2AA" stroke="#116b66" stroke-width="3"/>
+    
+    <!-- Keyboard Area -->
+    <path d="M 15 25 L 40 5 L 240 5 L 265 25 Z" fill="#c0c0c0" stroke="#a9a9a9" stroke-width="2"/>
+    
+    <!-- Keys -->
+    <g id="keys" fill="#333">
+        <circle cx="55" cy="15" r="5"/> <circle cx="75" cy="15" r="5"/> <circle cx="95" cy="15" r="5"/> <circle cx="115" cy="15" r="5"/> <circle cx="135" cy="15" r="5"/> <circle cx="155" cy="15" r="5"/><circle cx="175" cy="15" r="5"/><circle cx="195" cy="15" r="5"/><circle cx="215" cy="15" r="5"/><circle cx="235" cy="15" r="5"/>
+        <circle cx="65" cy="30" r="5"/> <circle cx="85" cy="30" r="5"/> <circle cx="105" cy="30" r="5"/> <circle cx="125" cy="30" r="5"/> <circle cx="170" cy="30" r="5"/> <circle cx="190" cy="30" r="5"/> <circle cx="210" cy="30" r="5"/>
+        <rect x="80" y="45" width="120" height="8" rx="4" fill="#555"/>
+    </g>
+
+    <!-- Paper and Roller -->
+    <g id="paper-mechanism" transform="translate(140, -50)">
+        <rect x="-100" y="0" width="200" height="15" fill="#555" rx="5"/>
+        <circle cx="-105" cy="7.5" r="10" fill="#333"/>
+        <circle cx="105" cy="7.5" r="10" fill="#333"/>
+        <path d="M -60 -90 L 60 -90 V 40 H-60 Z" fill="#ffffff" stroke="#e0e0e0" stroke-width="2" transform="rotate(-5)"/>
+        <!-- Text on paper -->
+        <g fill="#555">
+            <rect x="-40" y="-70" width="80" height="4" rx="2" transform="rotate(-5)" />
+            <rect x="-40" y="-60" width="70" height="4" rx="2" transform="rotate(-5)" />
+            <rect x="-40" y="-50" width="85" height="4" rx="2" transform="rotate(-5)" />
+        </g>
+    </g>
+  </g>
+
+  <!-- Group for the Elephant -->
+  <g id="elephant" transform="translate(0, -10)">
+    <!-- Body -->
+    <path d="M 120 150 C 60 150, 40 250, 110 300 H 280 C 350 250, 320 150, 260 150 Z" fill="#B0C4DE" stroke="#697a91" stroke-width="3"/>
+    
+    <!-- Head -->
+    <circle cx="270" cy="150" r="70" fill="#B0C4DE" stroke="#697a91" stroke-width="3"/>
+    
+    <!-- Ear -->
+    <path d="M 215 140 C 160 100, 160 220, 225 190 Z" fill="#9aaabb" stroke="#697a91" stroke-width="3"/>
+    
+    <!-- Eye -->
+    <circle cx="310" cy="135" r="8" fill="#222"/>
+    <circle cx="312" cy="133" r="2" fill="white"/>
+    
+    <!-- Tusk -->
+    <path d="M 280 200 C 270 220, 290 230, 300 220" fill="#FFF8DC" stroke="#e6dca7" stroke-width="2"/>
+    
+    <!-- Trunk typing on a key -->
+    <path d="M 275 210 C 260 250, 180 250, 160 215 Q 155 208 170 200" fill="#B0C4DE" stroke="#697a91" stroke-width="3" stroke-linecap="round"/>
+     <!-- Trunk Wrinkles -->
+    <path d="M 255 220 Q 250 225 255 230" fill="none" stroke="#9aaabb" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 220 235 Q 215 240 220 245" fill="none" stroke="#9aaabb" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

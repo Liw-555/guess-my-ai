@@ -1,0 +1,75 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky background -->
+  <rect width="800" height="600" fill="#87CEEB"/>
+  
+  <!-- Ground -->
+  <rect y="400" width="800" height="200" fill="#90EE90"/>
+  
+  <!-- Telescope tripod -->
+  <line x1="500" y1="250" x2="450" y2="400" stroke="#333" stroke-width="4"/>
+  <line x1="500" y1="250" x2="550" y2="400" stroke="#333" stroke-width="4"/>
+  <line x1="500" y1="250" x2="500" y2="400" stroke="#333" stroke-width="4"/>
+  
+  <!-- Telescope tube -->
+  <ellipse cx="500" cy="200" rx="80" ry="25" fill="#444"/>
+  <rect x="420" y="200" width="160" height="50" fill="#555"/>
+  <ellipse cx="500" cy="250" rx="80" ry="25" fill="#666"/>
+  
+  <!-- Telescope lens -->
+  <ellipse cx="420" cy="225" rx="20" ry="25" fill="#4A90E2"/>
+  
+  <!-- Telescope eyepiece -->
+  <rect x="570" y="215" width="30" height="20" fill="#333"/>
+  
+  <!-- Tool box on ground -->
+  <rect x="600" y="380" width="60" height="30" fill="#C41E3A" stroke="#000" stroke-width="2"/>
+  <rect x="615" y="370" width="30" height="10" fill="#C41E3A" stroke="#000" stroke-width="2"/>
+  
+  <!-- Wrench near telescope -->
+  <rect x="480" y="280" width="40" height="8" fill="#888" transform="rotate(-20 500 284)"/>
+  <circle cx="475" cy="284" r="6" fill="#888"/>
+  
+  <!-- Flamingo body -->
+  <ellipse cx="300" cy="320" rx="45" ry="55" fill="#FF69B4"/>
+  
+  <!-- Flamingo neck -->
+  <path d="M 300 280 Q 320 240 350 220" stroke="#FF69B4" stroke-width="18" fill="none"/>
+  
+  <!-- Flamingo head -->
+  <ellipse cx="355" cy="215" rx="18" ry="20" fill="#FF69B4"/>
+  
+  <!-- Flamingo beak -->
+  <path d="M 370 215 L 400 220 L 370 225 Z" fill="#000"/>
+  <path d="M 370 215 L 400 220 L 395 215 Z" fill="#FFA500"/>
+  
+  <!-- Flamingo eye -->
+  <circle cx="360" cy="210" r="3" fill="#000"/>
+  
+  <!-- Flamingo wing -->
+  <ellipse cx="285" cy="310" rx="35" ry="50" fill="#FF1493" transform="rotate(-20 285 310)"/>
+  
+  <!-- Flamingo legs (one standing, one raised) -->
+  <line x1="290" y1="375" x2="280" y2="450" stroke="#FFA07A" stroke-width="6"/>
+  <line x1="280" y1="450" x2="270" y2="455" stroke="#FFA07A" stroke-width="5"/>
+  <line x1="280" y1="450" x2="290" y2="455" stroke="#FFA07A" stroke-width="5"/>
+  
+  <!-- Raised leg holding screwdriver -->
+  <line x1="310" y1="375" x2="380" y2="280" stroke="#FFA07A" stroke-width="6"/>
+  
+  <!-- Flamingo foot holding screwdriver -->
+  <line x1="380" y1="280" x2="390" y2="275" stroke="#FFA07A" stroke-width="5"/>
+  
+  <!-- Screwdriver in flamingo's foot -->
+  <rect x="390" y="270" width="60" height="6" fill="#FFD700"/>
+  <polygon points="450,273 465,270 465,276 450,279" fill="#888"/>
+  
+  <!-- Screws floating nearby -->
+  <circle cx="420" cy="320" r="3" fill="#666"/>
+  <circle cx="435" cy="315" r="3" fill="#666"/>
+  
+  <!-- Small text bubble -->
+  <ellipse cx="250" cy="180" rx="60" ry="35" fill="#FFF" stroke="#000" stroke-width="2"/>
+  <text x="250" y="190" font-family="Arial" font-size="18" text-anchor="middle" fill="#000">Almost</text>
+  <text x="250" y="210" font-family="Arial" font-size="18" text-anchor="middle" fill="#000">fixed!</text>
+  <polygon points="270,210 280,240 260,215" fill="#FFF" stroke="#000" stroke-width="2"/>
+</svg>

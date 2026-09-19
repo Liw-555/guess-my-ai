@@ -89,6 +89,11 @@
       "key": "qwen3-vl-235b",
       "name": "Qwen3-VL 235B (thinking)",
       "vendor": "Alibaba"
+    },
+    {
+      "key": "claude-opus-4.5",
+      "name": "Claude Opus 4.5",
+      "vendor": "Anthropic"
     }
   ],
   "results": [
@@ -351,6 +356,162 @@
       "source": "gally.net pelican-alternatives 基准实测存档（2026-09-14，30 题 × 6 模型共 180 份输出）",
       "sourceUrl": "https://gally.net/temp/20260914pelican-alternatives/about.html",
       "note": "思考型模型，布局有设计感"
+    },
+    {
+      "id": "r21",
+      "promptId": "penguin-chainsaws",
+      "modelKey": "claude-sonnet-4.5",
+      "modelName": "Claude Sonnet 4.5",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/penguin-saw_anthropic_claude-sonnet-4.5.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "结构交代一贯清楚"
+    },
+    {
+      "id": "r22",
+      "promptId": "penguin-chainsaws",
+      "modelKey": "claude-opus-4.5",
+      "modelName": "Claude Opus 4.5",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/penguin-saw_anthropic_claude-opus-4.5.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "Claude 家新旗舰，和 Sonnet 4.5 同台对比"
+    },
+    {
+      "id": "r23",
+      "promptId": "penguin-chainsaws",
+      "modelKey": "gemini-2.5-pro",
+      "modelName": "Gemini 2.5 Pro",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/penguin-saw_google_gemini-2.5-pro.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "构图派，看它怎么排场景"
+    },
+    {
+      "id": "r24",
+      "promptId": "penguin-chainsaws",
+      "modelKey": "glm-4.6",
+      "modelName": "GLM-4.6",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/penguin-saw_z-ai_glm-4.6.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "细节量最大的一档"
+    },
+    {
+      "id": "r25",
+      "promptId": "flamingo-telescope",
+      "modelKey": "claude-sonnet-4.5",
+      "modelName": "Claude Sonnet 4.5",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/flamingo-scope_anthropic_claude-sonnet-4.5.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "结构交代一贯清楚"
+    },
+    {
+      "id": "r26",
+      "promptId": "flamingo-telescope",
+      "modelKey": "claude-opus-4.5",
+      "modelName": "Claude Opus 4.5",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/flamingo-scope_anthropic_claude-opus-4.5.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "Claude 家新旗舰，和 Sonnet 4.5 同台对比"
+    },
+    {
+      "id": "r27",
+      "promptId": "flamingo-telescope",
+      "modelKey": "gemini-2.5-pro",
+      "modelName": "Gemini 2.5 Pro",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/flamingo-scope_google_gemini-2.5-pro.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "构图派，看它怎么排场景"
+    },
+    {
+      "id": "r28",
+      "promptId": "flamingo-telescope",
+      "modelKey": "glm-4.6",
+      "modelName": "GLM-4.6",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/flamingo-scope_z-ai_glm-4.6.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "细节量最大的一档"
+    },
+    {
+      "id": "r29",
+      "promptId": "elephant-typewriter",
+      "modelKey": "claude-sonnet-4.5",
+      "modelName": "Claude Sonnet 4.5",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/elephant-type_anthropic_claude-sonnet-4.5.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "结构交代一贯清楚"
+    },
+    {
+      "id": "r30",
+      "promptId": "elephant-typewriter",
+      "modelKey": "claude-opus-4.5",
+      "modelName": "Claude Opus 4.5",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/elephant-type_anthropic_claude-opus-4.5.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "Claude 家新旗舰，和 Sonnet 4.5 同台对比"
+    },
+    {
+      "id": "r31",
+      "promptId": "elephant-typewriter",
+      "modelKey": "gemini-2.5-pro",
+      "modelName": "Gemini 2.5 Pro",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/elephant-type_google_gemini-2.5-pro.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "构图派，看它怎么排场景"
+    },
+    {
+      "id": "r32",
+      "promptId": "elephant-typewriter",
+      "modelKey": "glm-4.6",
+      "modelName": "GLM-4.6",
+      "date": "2025-11-07",
+      "type": "svg",
+      "asset": "assets/gally/elephant-type_z-ai_glm-4.6.svg",
+      "verified": true,
+      "source": "gally.net 20251107 pelican-alternatives 基准实测存档（30 题 × 9 模型，OpenRouter 实测）",
+      "sourceUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "note": "细节量最大的一档"
     }
   ]
 }

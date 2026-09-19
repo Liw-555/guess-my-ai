@@ -259,6 +259,89 @@
       "why": "金像=渐变+高光，鸵鸟=长脖子小脑袋大长腿，比特币=B 字斜杠符号。三种元素哪样糊了都能一眼看出来。",
       "note": "变化式：换成“孔雀举显卡”“水獭举保险杠”继续防背题",
       "cover": null
+    },
+    {
+      "id": "penguin-chainsaws",
+      "title": "企鹅抛接三把链锯",
+      "prompt": "Generate an SVG of a penguin juggling chainsaws",
+      "tags": [
+        "SVG",
+        "防背题",
+        "荒诞组合"
+      ],
+      "hotness": 4,
+      "origin": "gally.net 2025-11 pelican-alternatives 基准 30 题之一：企鹅的短手要同时接住旋转中的链锯，荒诞度直接拉满",
+      "originUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "why": "翅膀要张成抛接弧线、三把链锯位置错开、链条和导板都要可辨——哪家模型敢偷懒一眼就能看出来。本站已收录 4 个模型的真实输出。",
+      "note": "对比点：链锯是开着还是关着、企鹅表情、抛物线是否合理",
+      "cover": "assets/gally/penguin-saw_anthropic_claude-opus-4.5.svg",
+      "coverLabel": "示意图：Claude Opus 4.5 的真实输出（gally.net 20251107 基准）"
+    },
+    {
+      "id": "flamingo-telescope",
+      "title": "火烈鸟修望远镜",
+      "prompt": "Generate an SVG of a flamingo repairing a telescope",
+      "tags": [
+        "SVG",
+        "防背题",
+        "荒诞组合"
+      ],
+      "hotness": 3,
+      "origin": "gally.net 2025-11 基准 30 题之一：单腿站立的火烈鸟 + 精密光学仪器，脖子弯度决定成败",
+      "originUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "why": "火烈鸟标志性的 S 形长脖子要凑到目镜位置，一条腿站立一条腿收起——软体曲线和硬核机械同框，反差感就是辨识度。",
+      "note": "本站已收录 4 个模型的真实输出，进猜猜我是谁题库",
+      "cover": "assets/gally/flamingo-scope_anthropic_claude-sonnet-4.5.svg",
+      "coverLabel": "示意图：Claude Sonnet 4.5 的真实输出（gally.net 20251107 基准）"
+    },
+    {
+      "id": "elephant-typewriter",
+      "title": "大象用打字机",
+      "prompt": "Generate an SVG of an elephant typing on a typewriter",
+      "tags": [
+        "SVG",
+        "防背题",
+        "荒诞组合"
+      ],
+      "hotness": 3,
+      "origin": "gally.net 2025-11 基准 30 题之一：象鼻要按键盘，打字机的色带、字锤、滚筒缺一不可",
+      "originUrl": "https://gally.net/temp/20251107pelican-alternatives/about.html",
+      "why": "象鼻尖能不能精准落在按键上、打字机机械结构是否齐全，是最直观的「细节控」检验。",
+      "note": "本站已收录 4 个模型的真实输出，进猜猜我是谁题库",
+      "cover": "assets/gally/elephant-type_z-ai_glm-4.6.svg",
+      "coverLabel": "示意图：GLM-4.6 的真实输出（gally.net 20251107 基准）"
+    },
+    {
+      "id": "octopus-pennyfarthing-teapots",
+      "title": "章鱼骑大小轮车抛茶壶",
+      "prompt": "Generate an SVG of an octopus riding a penny-farthing bicycle while juggling exactly three teapots",
+      "tags": [
+        "SVG",
+        "三重任务",
+        "防背题"
+      ],
+      "hotness": 4,
+      "origin": "X（Twitter）社区挑战题：骑高低轮自行车的同时抛接恰好三个茶壶——三个任务共享八条腕足",
+      "originUrl": "https://x.com/Vi0l3t_Park3r/status/2098431871696637972",
+      "why": "penny-farthing 的前大轮后小轮本身就考验结构，再加「恰好三个茶壶」的数量约束和骑行动作的矛盾（手要扶车把还是抛壶？），三重约束一起考。",
+      "note": "X（Twitter）社区流传，经 Grok 检索收集；帖子链接未能逐条人工核验，按社区流传分级；变体玩法：把茶壶换成茶杯、灯泡等继续防背题",
+      "cover": null
+    },
+    {
+      "id": "giraffe-cabriolet",
+      "title": "长颈鹿开敞篷跑车看日落",
+      "prompt": "Generate dynamic SVG code for a side-view sunset scene of a cool giraffe driving a cabriolet sports car along a mountain highway.",
+      "tags": [
+        "SVG",
+        "动画",
+        "进阶"
+      ],
+      "hotness": 4,
+      "origin": "X（Twitter）流传的进阶版：侧视图日落场景 + 山路行驶，完整版还带相机跟随、远景视差滚动、3D 纵深效果等约束",
+      "originUrl": "https://x.com/erenciracioglu/status/2083918107643408451",
+      "why": "比静态 SVG 难一档：长颈鹿脖子要伸出敞篷且随车身姿态摆动，日落渐变+山景层次考验配色功力，动态版还要看视差滚动是否做出来。",
+      "note": "X（Twitter）社区流传，经 Grok 检索收集；帖子链接未能逐条人工核验，按社区流传分级；建议先测静态版，再加一句「添加视差滚动动画」测动态",
+      "cover": null
     }
   ]
 }

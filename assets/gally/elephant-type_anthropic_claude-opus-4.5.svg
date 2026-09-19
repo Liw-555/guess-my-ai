@@ -1,0 +1,67 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Typewriter -->
+  <rect x="100" y="180" width="120" height="60" fill="#2c3e50" rx="5"/>
+  <rect x="95" y="240" width="130" height="10" fill="#34495e"/>
+  <rect x="110" y="190" width="100" height="40" fill="#ecf0f1" rx="3"/>
+  <rect x="105" y="175" width="110" height="5" fill="#2c3e50"/>
+  
+  <!-- Typewriter keys -->
+  <rect x="115" y="195" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="125" y="195" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="135" y="195" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="145" y="195" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="155" y="195" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="165" y="195" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="175" y="195" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="185" y="195" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="195" y="195" width="8" height="8" fill="#34495e" rx="1"/>
+  
+  <rect x="120" y="205" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="130" y="205" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="140" y="205" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="150" y="205" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="160" y="205" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="170" y="205" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="180" y="205" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="190" y="205" width="8" height="8" fill="#34495e" rx="1"/>
+  
+  <rect x="125" y="215" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="135" y="215" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="145" y="215" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="155" y="215" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="165" y="215" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="175" y="215" width="8" height="8" fill="#34495e" rx="1"/>
+  <rect x="185" y="215" width="8" height="8" fill="#34495e" rx="1"/>
+  
+  <!-- Paper -->
+  <rect x="145" y="155" width="30" height="40" fill="white" stroke="#ddd"/>
+  <line x1="150" y1="165" x2="170" y2="165" stroke="#333" stroke-width="1"/>
+  <line x1="150" y1="170" x2="170" y2="170" stroke="#333" stroke-width="1"/>
+  <line x1="150" y1="175" x2="165" y2="175" stroke="#333" stroke-width="1"/>
+  
+  <!-- Elephant -->
+  <ellipse cx="260" cy="140" rx="50" ry="40" fill="#8b8b8b"/>
+  <ellipse cx="260" cy="180" rx="45" ry="50" fill="#8b8b8b"/>
+  
+  <!-- Elephant legs -->
+  <rect x="235" y="190" width="15" height="50" fill="#8b8b8b" rx="5"/>
+  <rect x="255" y="190" width="15" height="50" fill="#8b8b8b" rx="5"/>
+  <rect x="275" y="190" width="15" height="50" fill="#8b8b8b" rx="5"/>
+  
+  <!-- Elephant head -->
+  <ellipse cx="260" cy="110" rx="35" ry="30" fill="#8b8b8b"/>
+  
+  <!-- Elephant trunk typing -->
+  <path d="M 245 115 Q 220 130 200 150 Q 190 160 185 175 Q 183 180 160 200" 
+        stroke="#8b8b8b" stroke-width="18" fill="none" stroke-linecap="round"/>
+  
+  <!-- Elephant ear -->
+  <ellipse cx="285" cy="115" rx="25" ry="35" fill="#7a7a7a"/>
+  
+  <!-- Elephant eye -->
+  <circle cx="250" cy="105" r="4" fill="black"/>
+  <circle cx="252" cy="103" r="1.5" fill="white"/>
+  
+  <!-- Trunk tip pressing key -->
+  <ellipse cx="160" cy="200" rx="10" ry="8" fill="#7a7a7a"/>
+</svg>

@@ -1,0 +1,56 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Penguin body -->
+  <ellipse cx="200" cy="350" rx="80" ry="120" fill="black"/>
+  <ellipse cx="200" cy="360" rx="60" ry="100" fill="white"/>
+  
+  <!-- Penguin head -->
+  <circle cx="200" cy="180" r="60" fill="black"/>
+  <ellipse cx="200" cy="185" rx="45" ry="50" fill="white"/>
+  
+  <!-- Eyes -->
+  <circle cx="185" cy="170" r="8" fill="white"/>
+  <circle cx="215" cy="170" r="8" fill="white"/>
+  <circle cx="185" cy="170" r="5" fill="black"/>
+  <circle cx="215" cy="170" r="5" fill="black"/>
+  
+  <!-- Beak -->
+  <path d="M200 185 L190 195 L210 195 Z" fill="orange"/>
+  
+  <!-- Wings -->
+  <ellipse cx="130" cy="300" rx="30" ry="80" fill="black" transform="rotate(-20 130 300)"/>
+  <ellipse cx="270" cy="300" rx="30" ry="80" fill="black" transform="rotate(20 270 300)"/>
+  
+  <!-- Feet -->
+  <ellipse cx="170" cy="470" rx="30" ry="15" fill="orange"/>
+  <ellipse cx="230" cy="470" rx="30" ry="15" fill="orange"/>
+  
+  <!-- Chainsaws -->
+  <!-- Chainsaw 1 -->
+  <g transform="translate(120, 150) rotate(-30)">
+    <rect x="0" y="0" width="80" height="20" fill="gray"/>
+    <rect x="80" y="-5" width="15" height="30" fill="darkgray"/>
+    <rect x="-20" y="5" width="25" height="10" fill="darkred"/>
+    <path d="M80 20 L80 0 L95 0 L95 2 L82 2 L82 18 L95 18 L95 20 Z" fill="silver"/>
+  </g>
+  
+  <!-- Chainsaw 2 -->
+  <g transform="translate(250, 120) rotate(45)">
+    <rect x="0" y="0" width="80" height="20" fill="gray"/>
+    <rect x="80" y="-5" width="15" height="30" fill="darkgray"/>
+    <rect x="-20" y="5" width="25" height="10" fill="darkred"/>
+    <path d="M80 20 L80 0 L95 0 L95 2 L82 2 L82 18 L95 18 L95 20 Z" fill="silver"/>
+  </g>
+  
+  <!-- Chainsaw 3 -->
+  <g transform="translate(200, 80) rotate(10)">
+    <rect x="0" y="0" width="80" height="20" fill="gray"/>
+    <rect x="80" y="-5" width="15" height="30" fill="darkgray"/>
+    <rect x="-20" y="5" width="25" height="10" fill="darkred"/>
+    <path d="M80 20 L80 0 L95 0 L95 2 L82 2 L82 18 L95 18 L95 20 Z" fill="silver"/>
+  </g>
+  
+  <!-- Motion lines -->
+  <path d="M100 100 Q150 50 200 100" stroke="lightgray" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M200 100 Q250 50 300 100" stroke="lightgray" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M300 100 Q250 150 200 100" stroke="lightgray" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+</svg>
