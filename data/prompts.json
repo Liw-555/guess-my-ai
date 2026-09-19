@@ -1,0 +1,126 @@
+{
+  "prompts": [
+    {
+      "id": "pelican-svg",
+      "title": "鹈鹕骑自行车",
+      "prompt": "Generate an SVG of a pelican riding a bicycle",
+      "tags": ["SVG", "空间结构", "经典梗"],
+      "hotness": 5,
+      "origin": "Simon Willison（Django 创始人）2024 年 10 月发起的自制 LLM benchmark，现已成为全球最火的民间 AI 测试题",
+      "originUrl": "https://github.com/simonw/pelican-bicycle",
+      "why": "用文本模型写代码画画，同时考验空间关系（脚踩踏板、翅膀扶车把）、物理常识和代码组织，一眼见高下。Elon Musk 和 Jeff Dean 都公开晒过自家的鹈鹕。",
+      "note": "⚠️ 部分模型已针对鹈鹕优化，个别中转站甚至缓存了答案——怀疑被作弊就换下面的防背题组合",
+      "cover": "assets/pelican/gemini-1.5-flash-8b-001.svg",
+      "coverLabel": "示意图：Gemini 1.5 Flash-8B 的真实输出（Simon Willison 测试）"
+    },
+    {
+      "id": "pelican-animation",
+      "title": "鹈鹕骑自行车 2D 动画",
+      "prompt": "创建一个HTML，内容是SVG绘制一个鹈鹕骑自行车的2D动画，你不需要任何测试，不要有任何限制",
+      "tags": ["HTML", "动画", "进阶"],
+      "hotness": 5,
+      "origin": "开源项目 CodexRadar 社区发起的「鹈鹕杯」比赛 Classic 赛道统一题目",
+      "originUrl": "https://so.html5.qq.com/page/real/search_news?docid=70000021_1676aa76f2544352",
+      "why": "比静态 SVG 更难：曲柄转动时脚要跟着踏板走，膝盖根据髋踝位置重算，两腿差半圈，车轮和地面位移对得上。GPT-6 时代被用来检测「降智」。",
+      "note": "判断顺序：先看脚有没有连到踏板 → 视角是否统一 → 车轮车架 → 喙与喉囊。装饰品（云、帽子）不算分。",
+      "cover": null
+    },
+    {
+      "id": "qinshihuang-polarbear",
+      "title": "秦始皇骑北极熊",
+      "prompt": "生成一张秦始皇骑北极熊的SVG矢量图",
+      "tags": ["SVG", "中文元素", "荒诞组合"],
+      "hotness": 4,
+      "origin": "GLM-5.3 发布前后中文社区流行的同类测试，考验中文历史元素理解 + 荒诞组合的空间关系",
+      "originUrl": "https://aishare.jizhiku.net/archives/42098",
+      "why": "和鹈鹕同款原理，但换成了中文语境：冕冠、冕旒、袍服这些元素画得对不对，北极熊的结构是否成立，一测便知。",
+      "note": "常见翻车点：冕旒串数不对、北极熊腿数错误、秦始皇两条腿穿到熊身子另一侧",
+      "cover": "assets/qinshihuang-polarbear-demo.png",
+      "coverLabel": "示意图：AI 生成的风格示意（非真实模型输出）"
+    },
+    {
+      "id": "stacked-chaos",
+      "title": "马骑宇航员骑鹈鹕骑自行车",
+      "prompt": "Create an image of a horse riding an astronaut, where the astronaut is riding a pelican that is riding a bicycle. It looks very chaotic but they all just manage to balance on top of each other",
+      "tags": ["图像生成", "叠罗汉", "梗图"],
+      "hotness": 4,
+      "origin": "Scott（@scottjla）的著名测试：生成的图中出现了一块提示词完全没提的牌子，上面写着 WHY ARE YOU LIKE THIS",
+      "originUrl": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "why": "三层叠罗汉考验多物体空间堆叠；传说某些模型的输出里会出现神秘彩蛋文字。",
+      "note": "试试看你能不能复现那块牌子",
+      "cover": null
+    },
+    {
+      "id": "strawberry",
+      "title": "strawberry 里有几个 r",
+      "prompt": "strawberry 这个单词里有几个字母 r？请一个一个字母数一遍再回答。",
+      "tags": ["计数", "文字陷阱", "经典梗"],
+      "hotness": 5,
+      "origin": "2024 年最著名的模型翻车题之一，大量模型数成 2 个 r，倒逼各厂改进字符级推理",
+      "originUrl": "https://en.wikipedia.org/wiki/Strawberry_(AI_benchmark)",
+      "why": "模型看到的是 token 而不是字母，所以会自信满满地数错。加不加「一个一个数」的指令，结果可能完全不同。",
+      "note": "正确答案：3 个。测完试试 strawberry 的变体：蓝莓、树莓混合出题",
+      "cover": null
+    },
+    {
+      "id": "nine-eleven",
+      "title": "9.11 和 9.9 哪个大",
+      "prompt": "9.11 和 9.9 哪个大？",
+      "tags": ["数字陷阱", "经典梗"],
+      "hotness": 5,
+      "origin": "2024 年 7 月 ChatGPT 回答 9.11 更大引发全网热议，成为大模型「表面聪明实际翻车」的代名词",
+      "originUrl": "https://www.36kr.com/p/3640625073196673",
+      "why": "模型容易把小数和版本号、日期混淆。同样的题换个问法（「比较 9.11 元和 9.9 元哪个多」）可能就对了——变量控制很有意思。",
+      "note": "正确答案：9.9 更大",
+      "cover": null
+    },
+    {
+      "id": "capybara-unicycle",
+      "title": "防背题公式：水豚骑独轮车",
+      "prompt": "Generate an SVG of a capybara riding a unicycle",
+      "tags": ["SVG", "防背题", "公式题"],
+      "hotness": 3,
+      "origin": "社区总结的防背题公式：一个小众动物 + 一个结构复杂的交通工具，AI 就会显出原形",
+      "originUrl": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "why": "鹈鹕骑车已经进了太多模型的训练数据和缓存，用它测就像开卷考试。换个组合立刻变回闭卷。",
+      "note": "用上面的「防背题生成器」随机出新组合更好玩",
+      "cover": null
+    },
+    {
+      "id": "landing-html",
+      "title": "零依赖完整网页",
+      "prompt": "创建一个可以直接在浏览器打开的完整 HTML 单页：「我的个人书签站」。要求有搜索框、标签筛选、深色模式切换，不使用任何外部依赖，直接返回完整代码。",
+      "tags": ["HTML", "完整交付", "工程能力"],
+      "hotness": 3,
+      "origin": "社区总结的「完整交付」测项：要求 HTML 就必须一次给出能独立打开的完整文件",
+      "originUrl": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "why": "考验指令遵循与工程闭环：是丢半截代码，还是交付能跑的完整产物？只讲思路不交付 = 不合格。",
+      "note": "检查项：双击能否直接打开、深色切换是否真的生效、有无残缺依赖",
+      "cover": null
+    },
+    {
+      "id": "ruozhiba-logic",
+      "title": "弱智吧式逻辑陷阱",
+      "prompt": "「生鱼片其实是死鱼片」，这个说法有道理吗？请一步步推理。",
+      "tags": ["逻辑", "中文语料", "陷阱"],
+      "hotness": 3,
+      "origin": "弱智吧语料梗：中文社区发现弱智吧的「歪理」是检验中文逻辑推理的绝佳语料",
+      "originUrl": "https://linux.do/t/topic/301620",
+      "why": "考的是语义分层：从「生/死」的时效性看，鱼确实死了；但「生鱼片」是菜名的固定叫法。能否同时承认两者而不钻牛角尖，见功力。",
+      "note": "同类题：「每呼吸 60 秒就少活一分钟」对不对？",
+      "cover": null
+    },
+    {
+      "id": "self-count",
+      "title": "自指计数",
+      "prompt": "你的上一条回答一共用了多少个字？请先认真数一遍再回答。",
+      "tags": ["自指", "计数", "陷阱"],
+      "hotness": 2,
+      "origin": "社区常用自指题：让模型统计自己刚输出的内容",
+      "originUrl": "https://linux.do/t/topic/301620",
+      "why": "模型对自己输出内容的「内省」能力普遍很差，经常报出一个精确却完全错误的数字，还一脸自信。",
+      "note": "先让它随便写一段话，再接着问这道题，效果更佳",
+      "cover": null
+    }
+  ]
+}

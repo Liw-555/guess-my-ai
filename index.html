@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测测你的AI · 猜猜我是谁？</title>
+  <meta name="description" content="用最火的梗测试你的 AI（鹈鹕骑车、秦始皇骑北极熊…），再看结果猜模型。社区题库 + 猜模型游戏 + 中转站打假。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚲</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">🚲 <span>测测你的<em>AI</em></span></a>
+    <nav class="nav">
+      <a href="#/prompts" data-nav="prompts">📋 题库</a>
+      <a href="#/game" data-nav="game">🎮 猜猜我是谁</a>
+      <a href="#/gallery" data-nav="gallery">🖼️ 结果墙</a>
+      <a href="#/submit" data-nav="submit">✍️ 投稿</a>
+      <a href="#/about" data-nav="about">💡 玩法</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <div class="loading-block">加载中，鹈鹕正在蹬车赶来…🚲</div>
+  </main>
+
+  <footer class="footer">
+    <p>测测你的AI · 猜猜我是谁 — 一个社区驱动的 AI 测试梗题库与猜模型游戏（MVP）</p>
+    <p>鹈鹕 SVG 数据来源：<a href="https://github.com/simonw/pelican-bicycle" target="_blank" rel="noopener">simonw/pelican-bicycle</a>（各模型真实输出，版权归各自模型作者/平台）· 内容为社区自报，仅供娱乐参考</p>
+    <p><a href="https://github.com/LiW-555/guess-my-ai" target="_blank" rel="noopener">GitHub 开源</a> · Fork 本仓库即可部署你自己的站点</p>
+  </footer>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
