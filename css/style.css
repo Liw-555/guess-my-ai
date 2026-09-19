@@ -463,3 +463,116 @@ code, pre {
   color: var(--muted);
   font-weight: 700;
 }
+
+/* ---------- 图片灯箱（原生 dialog + 黄漫风） ---------- */
+dialog.lb {
+  padding: 0;
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: var(--card);
+  width: min(1100px, 94vw);
+  height: min(88vh, 900px);
+  max-width: min(1100px, 94vw);
+  max-height: min(88vh, 900px);
+}
+dialog.lb::backdrop { background: rgba(20, 20, 20, .78); }
+dialog.lb[open] { display: flex; flex-direction: column; animation: lbPop .18s ease; }
+@keyframes lbPop { from { opacity: 0; transform: scale(.94); } }
+
+.lb-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; flex-wrap: wrap;
+  padding: 10px 14px;
+  background: var(--yellow);
+  border-bottom: var(--border);
+}
+.lb-title { font-weight: 900; font-size: 15px; }
+.lb-tools { display: flex; align-items: center; gap: 6px; }
+.lb-btn {
+  font-family: var(--font); font-weight: 900; font-size: 14px;
+  min-width: 34px; height: 34px; padding: 0 9px;
+  border: 2px solid var(--ink); border-radius: 8px;
+  background: #fff; color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.lb-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
+.lb-btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--ink); }
+.lb-close { background: var(--coral); }
+.lb-zoomval { font-size: 12.5px; font-weight: 900; min-width: 46px; text-align: center; }
+
+.lb-stage {
+  position: relative; flex: 1; overflow: hidden;
+  background: #26241F;
+  background-image: radial-gradient(#3A382F 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: zoom-in;
+  touch-action: none;
+}
+.lb-stage.zoomed { cursor: grab; }
+.lb-stage.panning { cursor: grabbing; }
+.lb-stage img {
+  max-width: 92%; max-height: 94%;
+  width: auto; height: auto;
+  border: 2px solid var(--ink); background: #fff;
+  transform-origin: center;
+  transition: transform .16s ease, opacity .18s ease;
+  user-select: none; -webkit-user-drag: none;
+}
+.lb-stage.panning img, .lb-stage.no-anim img { transition: none; }
+.lb-stage img.lb-loading { opacity: 0; }
+
+.lb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  font-family: var(--font); font-size: 26px; font-weight: 900; line-height: 1;
+  width: 44px; height: 52px;
+  border: var(--border); border-radius: 10px;
+  background: var(--yellow); color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink); cursor: pointer;
+}
+.lb-nav:hover { transform: translateY(-50%) translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+.lb-prev { left: 10px; }
+.lb-next { right: 10px; }
+.lb-nav[hidden] { display: none; }
+
+.lb-hint {
+  position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%);
+  font-size: 11.5px; font-weight: 700; color: #EDEAE2;
+  background: rgba(0, 0, 0, .55); border-radius: 999px;
+  padding: 4px 14px; pointer-events: none; white-space: nowrap;
+  transition: opacity .6s ease;
+}
+.lb-hint.bye { opacity: 0; }
+
+.lb-cap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; padding: 9px 14px;
+  border-top: var(--border); background: var(--card);
+}
+.lb-cap-text { font-size: 13px; font-weight: 700; }
+.lb-count { font-size: 12px; font-weight: 900; color: var(--muted); white-space: nowrap; }
+
+/* 可放大图片的触发按钮（包住 img，保持原布局） */
+.lb-trigger {
+  padding: 0; border: none; background: none; cursor: zoom-in;
+  display: block; line-height: 0; font-family: inherit;
+}
+.hero-art .lb-trigger { width: 100%; }
+.model-card .thumbs .thumb { cursor: zoom-in; }
+.model-card .thumbs .thumb:hover { transform: translate(-2px, -2px); box-shadow: 3px 3px 0 var(--ink); }
+
+@media (max-width: 720px) {
+  dialog.lb { width: 96vw; height: 92vh; max-width: 96vw; max-height: 92vh; }
+  .lb-nav { width: 38px; height: 44px; font-size: 22px; }
+  .lb-cap-text { font-size: 12px; }
+  .lb-hint { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog.lb[open] { animation: none; }
+  .lb-stage img { transition: none !important; }
+}

@@ -77,6 +77,200 @@ function shuffle(arr) {
 
 const hotStars = (n) => "🔥".repeat(n);
 
+/* ============================================================
+   图片灯箱（原生 <dialog>，零依赖）
+   依据的最佳实践：
+   - showModal() 自带焦点陷阱 / Esc 关闭 / 背景 inert，关闭后焦点还原触发元素
+   - 打开时锁定背景滚动；提供可见的带名称关闭按钮；点击背景可关（非唯一方式）
+   - 滚轮/双击/双指 pinch 缩放、拖拽平移、方向键组内导航、位置指示、来源标注
+   ============================================================ */
+const lbJson = (o) => escapeHtml(JSON.stringify(o));
+
+const LB = {
+  zoom: 1, px: 0, py: 0,
+  items: [], idx: 0, trigger: null,
+  ptrs: new Map(), pinchDist: 0, swipe: null
+};
+let lbHintTimer = null;
+const lbEl = (id) => document.getElementById(id);
+
+function lbApply() {
+  lbEl("lb-img").style.transform = `translate(${LB.px}px, ${LB.py}px) scale(${LB.zoom})`;
+  lbEl("lb-zoomval").textContent = Math.round(LB.zoom * 100) + "%";
+  lbEl("lb-stage").classList.toggle("zoomed", LB.zoom > 1);
+}
+
+function lbClampPan() {
+  const st = lbEl("lb-stage");
+  if (LB.zoom <= 1) { LB.px = 0; LB.py = 0; return; }
+  const mx = st.clientWidth * (LB.zoom - 1) / 2;
+  const my = st.clientHeight * (LB.zoom - 1) / 2;
+  LB.px = Math.max(-mx, Math.min(mx, LB.px));
+  LB.py = Math.max(-my, Math.min(my, LB.py));
+}
+
+function lbZoomAt(z2, cx, cy) {
+  const r = lbEl("lb-stage").getBoundingClientRect();
+  const z1 = LB.zoom;
+  z2 = Math.min(10, Math.max(1, z2));
+  if (z1 === z2) return;
+  if (cx != null) { /* 围绕光标/双指中心缩放，保持该点内容不动 */
+    LB.px += (cx - (r.left + r.width / 2)) * (z1 - z2);
+    LB.py += (cy - (r.top + r.height / 2)) * (z1 - z2);
+  }
+  LB.zoom = z2;
+  lbClampPan();
+  lbApply();
+}
+
+function lbReset() { LB.zoom = 1; LB.px = 0; LB.py = 0; lbApply(); }
+
+function lbShow(i) {
+  LB.idx = (i + LB.items.length) % LB.items.length;
+  const it = LB.items[LB.idx];
+  const img = lbEl("lb-img");
+  img.classList.add("lb-loading");
+  img.src = it.src;
+  img.alt = it.cap || "模型输出图";
+  lbEl("lb-cap").textContent = it.cap || "";
+  const multi = LB.items.length > 1;
+  lbEl("lb-count").textContent = multi ? `${LB.idx + 1} / ${LB.items.length}` : "";
+  lbEl("lb-prev").hidden = !multi;
+  lbEl("lb-next").hidden = !multi;
+  const raw = lbEl("lb-raw");
+  if (it.href) { raw.hidden = false; raw.href = it.href; } else { raw.hidden = true; }
+  lbReset();
+}
+
+function lbOpen(items, idx, trigger) {
+  LB.items = items;
+  LB.trigger = trigger || document.activeElement;
+  document.body.style.overflow = "hidden"; /* 原生 dialog 不锁背景滚动，手动锁 */
+  lbEl("lightbox").showModal();
+  lbShow(idx);
+  const hint = lbEl("lb-hint");
+  hint.classList.remove("bye");
+  clearTimeout(lbHintTimer);
+  lbHintTimer = setTimeout(() => hint.classList.add("bye"), 5000);
+}
+
+function lbClose() { lbEl("lightbox").close(); }
+
+function lbInit() {
+  const dlg = lbEl("lightbox");
+  const stage = lbEl("lb-stage");
+  const img = lbEl("lb-img");
+  img.addEventListener("load", () => img.classList.remove("lb-loading"));
+
+  /* 全站事件委托：任何带 data-lb（JSON）的元素都可打开灯箱 */
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-lb]");
+    if (!t) return;
+    e.preventDefault();
+    let data;
+    try { data = JSON.parse(t.dataset.lb); } catch { return; }
+    let items = [data], idx = 0;
+    if (data.group) { /* 同组图片可导航 */
+      items = [];
+      document.querySelectorAll("[data-lb]").forEach((n) => {
+        try {
+          const d = JSON.parse(n.dataset.lb);
+          if (d.group === data.group) items.push(d);
+        } catch {}
+      });
+      idx = Math.max(0, items.findIndex((d) => d.src === data.src));
+    }
+    lbOpen(items, idx, t);
+  });
+
+  lbEl("lb-close").addEventListener("click", lbClose);
+  lbEl("lb-zoomin").addEventListener("click", () => lbZoomAt(LB.zoom * 1.4));
+  lbEl("lb-zoomout").addEventListener("click", () => lbZoomAt(LB.zoom / 1.4));
+  lbEl("lb-reset").addEventListener("click", lbReset);
+  lbEl("lb-prev").addEventListener("click", () => lbShow(LB.idx - 1));
+  lbEl("lb-next").addEventListener("click", () => lbShow(LB.idx + 1));
+
+  /* 键盘：+/-/0/方向键（Esc 由原生 dialog 处理） */
+  dlg.addEventListener("keydown", (e) => {
+    if (e.key === "+" || e.key === "=") { e.preventDefault(); lbZoomAt(LB.zoom * 1.4); }
+    else if (e.key === "-" || e.key === "_") { e.preventDefault(); lbZoomAt(LB.zoom / 1.4); }
+    else if (e.key === "0") { e.preventDefault(); lbReset(); }
+    else if (e.key === "ArrowLeft" && LB.items.length > 1) { e.preventDefault(); lbShow(LB.idx - 1); }
+    else if (e.key === "ArrowRight" && LB.items.length > 1) { e.preventDefault(); lbShow(LB.idx + 1); }
+  });
+
+  /* 点击深色背景关闭（保留按钮/Esc 等其它关闭方式） */
+  dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+
+  /* 关闭后：还原背景滚动与焦点，清空图片停止加载 */
+  dlg.addEventListener("close", () => {
+    document.body.style.overflow = "";
+    lbReset();
+    img.src = "";
+    if (LB.trigger && document.contains(LB.trigger)) LB.trigger.focus();
+  });
+
+  /* 滚轮缩放（围绕光标位置） */
+  stage.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    lbZoomAt(LB.zoom * (e.deltaY < 0 ? 1.18 : 1 / 1.18), e.clientX, e.clientY);
+  }, { passive: false });
+
+  /* 双击：1x ↔ 2.5x */
+  stage.addEventListener("dblclick", (e) => {
+    if (LB.zoom > 1) lbReset();
+    else lbZoomAt(2.5, e.clientX, e.clientY);
+  });
+
+  /* 指针：拖拽平移 / 双指 pinch 缩放 / 触摸滑动切图 */
+  stage.addEventListener("pointerdown", (e) => {
+    if (e.target.closest(".lb-nav")) return;
+    stage.setPointerCapture(e.pointerId);
+    LB.ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    LB.swipe = (LB.ptrs.size === 1 && e.pointerType === "touch" && LB.zoom === 1)
+      ? { x: e.clientX, y: e.clientY, t: Date.now() } : null;
+    if (LB.ptrs.size === 2) {
+      const [a, b] = [...LB.ptrs.values()];
+      LB.pinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+    }
+    if (LB.zoom > 1) stage.classList.add("panning");
+  });
+  stage.addEventListener("pointermove", (e) => {
+    if (!LB.ptrs.has(e.pointerId)) return;
+    const prev = LB.ptrs.get(e.pointerId);
+    const cur = { x: e.clientX, y: e.clientY };
+    LB.ptrs.set(e.pointerId, cur);
+    if (LB.ptrs.size === 2) {
+      const [a, b] = [...LB.ptrs.values()];
+      const d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (LB.pinchDist > 0 && d > 0) {
+        lbZoomAt(LB.zoom * (d / LB.pinchDist), (a.x + b.x) / 2, (a.y + b.y) / 2);
+      }
+      LB.pinchDist = d;
+    } else if (LB.zoom > 1) {
+      LB.px += cur.x - prev.x;
+      LB.py += cur.y - prev.y;
+      lbClampPan();
+      lbApply();
+    }
+  });
+  const lbEndPtr = (e) => {
+    if (!LB.ptrs.has(e.pointerId)) return;
+    LB.ptrs.delete(e.pointerId);
+    if (LB.ptrs.size < 2) LB.pinchDist = 0;
+    if (!LB.ptrs.size) stage.classList.remove("panning");
+    if (LB.swipe) { /* 触摸：快速左右滑切图 */
+      const dx = e.clientX - LB.swipe.x, dy = e.clientY - LB.swipe.y;
+      if (LB.items.length > 1 && Math.abs(dx) > 60 && Math.abs(dy) < 50 && Date.now() - LB.swipe.t < 600) {
+        lbShow(LB.idx + (dx < 0 ? 1 : -1));
+      }
+      LB.swipe = null;
+    }
+  };
+  stage.addEventListener("pointerup", lbEndPtr);
+  stage.addEventListener("pointercancel", lbEndPtr);
+}
+
 /* ---------- 数据加载 ---------- */
 async function loadData() {
   const [p, r] = await Promise.all([
@@ -133,8 +327,10 @@ function viewHome() {
         </div>
       </div>
       <figure class="hero-art">
-        <img src="${heroArt.asset}" alt="某模型生成的鹈鹕骑自行车 SVG" loading="lazy">
-        <figcaption>↑ 这张真实模型输出出自谁手？<a href="#/game">来猜 →</a>（来源：${escapeHtml(heroSrc)}）</figcaption>
+        <button class="lb-trigger" data-lb='${lbJson({ src: heroArt.asset, cap: `首页大图 · 真实模型输出（来源：${heroSrc}）`, href: heroArt.asset })}' aria-label="放大查看这张鹈鹕图">
+          <img src="${heroArt.asset}" alt="某模型生成的鹈鹕骑自行车 SVG" loading="lazy">
+        </button>
+        <figcaption>↑ 这张真实模型输出出自谁手？<a href="#/game">来猜 →</a>（来源：${escapeHtml(heroSrc)}）· <b>点击图片可放大</b></figcaption>
       </figure>
     </section>
 
@@ -215,7 +411,7 @@ function viewPrompts() {
     const list = tag ? DB.prompts.filter((p) => p.tags.includes(tag)) : DB.prompts;
     $("#prompt-grid").innerHTML = list.map((p) => `
       <article class="card prompt-card">
-        ${p.cover ? `<div class="cover"><img src="${p.cover}" alt="${escapeHtml(p.coverLabel || p.title)}" loading="lazy"></div>` : ""}
+        ${p.cover ? `<div class="cover"><button class="lb-trigger" data-lb='${lbJson({ src: p.cover, cap: `${p.title}${p.coverLabel ? " · " + p.coverLabel : ""} · 真实模型输出示例`, href: p.cover })}' aria-label="放大查看示例图"><img src="${p.cover}" alt="${escapeHtml(p.coverLabel || p.title)}" loading="lazy"></button></div>` : ""}
         ${p.coverLabel ? `<div class="meta">🖼️ ${escapeHtml(p.coverLabel)}</div>` : ""}
         <h3>${escapeHtml(p.title)} ${hotStars(p.hotness)}</h3>
         <div>${p.tags.map((t) => `<span class="badge b-blue">${escapeHtml(t)}</span>`).join("")}</div>
@@ -275,7 +471,7 @@ function renderRound() {
   const p = promptById(s.result.promptId);
   const g = store.global;
   const body = s.result.type === "svg"
-    ? `<img src="${s.result.asset}" alt="神秘模型输出" >`
+    ? `<button class="lb-trigger" data-lb='${lbJson({ src: s.result.asset, cap: "神秘模型输出 · 放大找「画风指纹」：先看连接关系，再看视角，最后看装饰" })}' aria-label="放大查看输出图（不显示来源，防止剧透）"><img src="${s.result.asset}" alt="神秘模型输出"></button>`
     : `<div class="text-output">${escapeHtml(s.result.text)}</div>`;
 
   $("#game-area").innerHTML = `
@@ -390,7 +586,7 @@ function viewGallery() {
             <div class="vendor">${escapeHtml(m.vendor)} · ${outs.length} 份结果</div>
             <div class="thumbs">
               ${outs.map((r) => r.type === "svg"
-                ? `<a class="thumb" href="${r.asset}" target="_blank" rel="noopener" title="点开看大图"><img src="${r.asset}" alt="${escapeHtml(m.name)} 输出" loading="lazy"></a>`
+                ? `<button class="thumb" data-lb='${lbJson({ src: r.asset, cap: `${m.name} · ${r.date} · ${r.verified ? "✅ 可溯源" : "📜 社区流传"}`, href: r.asset, group: "gallery" })}' title="点击放大" aria-label="放大查看 ${escapeHtml(m.name)} 的输出图"><img src="${r.asset}" alt="${escapeHtml(m.name)} 输出" loading="lazy"></button>`
                 : `<a class="thumb txt" href="#/game" title="去游戏里猜">📝</a>`).join("")}
             </div>
             ${outs[0].note ? `<div class="meta" style="font-size:12.5px;color:var(--muted)">🔍 ${escapeHtml(outs[0].note)}</div>` : ""}
@@ -575,6 +771,7 @@ function viewAbout() {
 (async function init() {
   try {
     await loadData();
+    lbInit();
     window.addEventListener("hashchange", router);
     router();
   } catch (e) {
