@@ -88,11 +88,12 @@ const lbJson = (o) => escapeHtml(JSON.stringify(o));
 
 const LB = {
   zoom: 1, px: 0, py: 0,
-  items: [], idx: 0, trigger: null,
+  items: [], idx: 0, trigger: null, openedAt: 0,
   ptrs: new Map(), pinchDist: 0, swipe: null
 };
 let lbHintTimer = null;
 const lbEl = (id) => document.getElementById(id);
+const lbIsText = () => !!(LB.items[LB.idx] && LB.items[LB.idx].text);
 
 function lbApply() {
   lbEl("lb-img").style.transform = `translate(${LB.px}px, ${LB.py}px) scale(${LB.zoom})`;
@@ -129,9 +130,17 @@ function lbShow(i) {
   LB.idx = (i + LB.items.length) % LB.items.length;
   const it = LB.items[LB.idx];
   const img = lbEl("lb-img");
-  img.classList.add("lb-loading");
-  img.src = it.src;
-  img.alt = it.cap || "模型输出图";
+  const isText = !!it.text;
+  /* 文本结果：显示大字面板，隐藏图片与缩放控件（缩放对文本无意义） */
+  img.hidden = isText;
+  lbEl("lb-text").hidden = !isText;
+  lbEl("lb-text").textContent = it.text || "";
+  document.querySelector(".lb-tools").classList.toggle("text-mode", isText);
+  if (!isText) {
+    img.classList.add("lb-loading");
+    img.src = it.src;
+    img.alt = it.cap || "模型输出图";
+  }
   lbEl("lb-cap").textContent = it.cap || "";
   const multi = LB.items.length > 1;
   lbEl("lb-count").textContent = multi ? `${LB.idx + 1} / ${LB.items.length}` : "";
@@ -145,6 +154,7 @@ function lbShow(i) {
 function lbOpen(items, idx, trigger) {
   LB.items = items;
   LB.trigger = trigger || document.activeElement;
+  LB.openedAt = Date.now(); /* 冷却期：拦截双击打开时第二击误触画布的 dblclick 放大 */
   document.body.style.overflow = "hidden"; /* 原生 dialog 不锁背景滚动，手动锁 */
   lbEl("lightbox").showModal();
   lbShow(idx);
@@ -178,7 +188,7 @@ function lbInit() {
           if (d.group === data.group) items.push(d);
         } catch {}
       });
-      idx = Math.max(0, items.findIndex((d) => d.src === data.src));
+      idx = Math.max(0, items.findIndex((d) => JSON.stringify(d) === JSON.stringify(data)));
     }
     lbOpen(items, idx, t);
   });
@@ -190,13 +200,15 @@ function lbInit() {
   lbEl("lb-prev").addEventListener("click", () => lbShow(LB.idx - 1));
   lbEl("lb-next").addEventListener("click", () => lbShow(LB.idx + 1));
 
-  /* 键盘：+/-/0/方向键（Esc 由原生 dialog 处理） */
+  /* 键盘：+/-/0/方向键（Esc 由原生 dialog 处理）；文本模式只留切换 */
   dlg.addEventListener("keydown", (e) => {
-    if (e.key === "+" || e.key === "=") { e.preventDefault(); lbZoomAt(LB.zoom * 1.4); }
-    else if (e.key === "-" || e.key === "_") { e.preventDefault(); lbZoomAt(LB.zoom / 1.4); }
-    else if (e.key === "0") { e.preventDefault(); lbReset(); }
-    else if (e.key === "ArrowLeft" && LB.items.length > 1) { e.preventDefault(); lbShow(LB.idx - 1); }
+    if (e.key === "ArrowLeft" && LB.items.length > 1) { e.preventDefault(); lbShow(LB.idx - 1); }
     else if (e.key === "ArrowRight" && LB.items.length > 1) { e.preventDefault(); lbShow(LB.idx + 1); }
+    else if (!lbIsText()) {
+      if (e.key === "+" || e.key === "=") { e.preventDefault(); lbZoomAt(LB.zoom * 1.4); }
+      else if (e.key === "-" || e.key === "_") { e.preventDefault(); lbZoomAt(LB.zoom / 1.4); }
+      else if (e.key === "0") { e.preventDefault(); lbReset(); }
+    }
   });
 
   /* 点击深色背景关闭（保留按钮/Esc 等其它关闭方式） */
@@ -207,17 +219,21 @@ function lbInit() {
     document.body.style.overflow = "";
     lbReset();
     img.src = "";
+    lbEl("lb-text").textContent = "";
     if (LB.trigger && document.contains(LB.trigger)) LB.trigger.focus();
   });
 
   /* 滚轮缩放（围绕光标位置） */
   stage.addEventListener("wheel", (e) => {
+    if (lbIsText()) return;
     e.preventDefault();
     lbZoomAt(LB.zoom * (e.deltaY < 0 ? 1.18 : 1 / 1.18), e.clientX, e.clientY);
   }, { passive: false });
 
-  /* 双击：1x ↔ 2.5x */
+  /* 双击：1x ↔ 2.5x；打开后 450ms 内忽略——拦下「双击缩略图打开」时第二击误触发放大 */
   stage.addEventListener("dblclick", (e) => {
+    if (lbIsText()) return;
+    if (Date.now() - LB.openedAt < 450) return;
     if (LB.zoom > 1) lbReset();
     else lbZoomAt(2.5, e.clientX, e.clientY);
   });
@@ -587,7 +603,7 @@ function viewGallery() {
             <div class="thumbs">
               ${outs.map((r) => r.type === "svg"
                 ? `<button class="thumb" data-lb='${lbJson({ src: r.asset, cap: `${m.name} · ${r.date} · ${r.verified ? "✅ 可溯源" : "📜 社区流传"}`, href: r.asset, group: "gallery" })}' title="点击放大" aria-label="放大查看 ${escapeHtml(m.name)} 的输出图"><img src="${r.asset}" alt="${escapeHtml(m.name)} 输出" loading="lazy"></button>`
-                : `<a class="thumb txt" href="#/game" title="去游戏里猜">📝</a>`).join("")}
+                : `<button class="thumb txt" data-lb='${lbJson({ text: r.text || "（无记录）", cap: `${m.name} · ${r.date} · ${r.verified ? "✅ 可溯源" : "📜 社区流传"} · 文本回答全文`, group: "gallery" })}' title="点击查看全文" aria-label="查看 ${escapeHtml(m.name)} 的文本回答全文">📝</button>`).join("")}
             </div>
             ${outs[0].note ? `<div class="meta" style="font-size:12.5px;color:var(--muted)">🔍 ${escapeHtml(outs[0].note)}</div>` : ""}
           </article>`;

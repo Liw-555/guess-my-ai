@@ -37,10 +37,10 @@
     <div class="lb-head">
       <div class="lb-title" id="lb-title">🔍 图片放大预览</div>
       <div class="lb-tools">
-        <button class="lb-btn" id="lb-zoomout" title="缩小（-）" aria-label="缩小">−</button>
-        <span class="lb-zoomval" id="lb-zoomval">100%</span>
-        <button class="lb-btn" id="lb-zoomin" title="放大（+）" aria-label="放大">＋</button>
-        <button class="lb-btn" id="lb-reset" title="还原大小（0）" aria-label="还原大小">1:1</button>
+        <button class="lb-btn lb-zoomctl" id="lb-zoomout" title="缩小（-）" aria-label="缩小">−</button>
+        <span class="lb-zoomval lb-zoomctl" id="lb-zoomval">100%</span>
+        <button class="lb-btn lb-zoomctl" id="lb-zoomin" title="放大（+）" aria-label="放大">＋</button>
+        <button class="lb-btn lb-zoomctl" id="lb-reset" title="适应窗口（0）" aria-label="适应窗口">⤢</button>
         <a class="lb-btn" id="lb-raw" target="_blank" rel="noopener" title="新标签查看原图" aria-label="新标签查看原图">↗</a>
         <button class="lb-btn lb-close" id="lb-close" title="关闭（Esc）" aria-label="关闭预览">✕</button>
       </div>
@@ -48,6 +48,7 @@
     <div class="lb-stage" id="lb-stage">
       <button class="lb-nav lb-prev" id="lb-prev" aria-label="上一张">‹</button>
       <img id="lb-img" alt="" draggable="false">
+      <pre id="lb-text" class="lb-text" hidden></pre>
       <button class="lb-nav lb-next" id="lb-next" aria-label="下一张">›</button>
       <div class="lb-hint" id="lb-hint">滚轮 / 双击缩放 · 拖拽平移 · 方向键切换</div>
     </div>

@@ -517,13 +517,28 @@ dialog.lb[open] { display: flex; flex-direction: column; animation: lbPop .18s e
 .lb-stage.zoomed { cursor: grab; }
 .lb-stage.panning { cursor: grabbing; }
 .lb-stage img {
-  max-width: 92%; max-height: 94%;
-  width: auto; height: auto;
+  /* 统一视觉基准（fit-to-screen = 100%）：不管原图是 120x60 还是 2400x1860，
+     打开时都适应画布，缩放倍率是相对适应尺寸的比例 */
+  width: 92%;
+  max-height: 94%;
+  object-fit: contain;
   border: 2px solid var(--ink); background: #fff;
   transform-origin: center;
   transition: transform .16s ease, opacity .18s ease;
   user-select: none; -webkit-user-drag: none;
 }
+.lb-text {
+  max-width: 92%; max-height: 94%;
+  overflow: auto;
+  background: #FFFDF5;
+  border: 2px solid var(--ink); border-radius: 10px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, .35);
+  padding: 22px 26px;
+  font-family: var(--font); font-size: 16.5px; line-height: 2;
+  font-weight: 600; color: var(--ink);
+  white-space: pre-wrap; word-break: break-word;
+}
+.lb-tools.text-mode .lb-zoomctl { display: none; }
 .lb-stage.panning img, .lb-stage.no-anim img { transition: none; }
 .lb-stage img.lb-loading { opacity: 0; }
 
