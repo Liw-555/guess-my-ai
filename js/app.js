@@ -117,8 +117,9 @@ function router() {
    视图：首页
    ============================================================ */
 function viewHome() {
-  const featured = DB.results.filter((r) => r.type === "svg");
+  const featured = DB.results.filter((r) => r.type === "svg" && r.promptId === "pelican-svg");
   const heroArt = featured[Math.floor(Math.random() * featured.length)];
+  const heroSrc = heroArt ? heroArt.source.split("（")[0] : "simonw/pelican-bicycle";
   const g = store.global;
   app().innerHTML = `
     <section class="hero">
@@ -133,7 +134,7 @@ function viewHome() {
       </div>
       <figure class="hero-art">
         <img src="${heroArt.asset}" alt="某模型生成的鹈鹕骑自行车 SVG" loading="lazy">
-        <figcaption>↑ 这张真实模型输出出自谁手？<a href="#/game">来猜 →</a>（来源：simonw/pelican-bicycle）</figcaption>
+        <figcaption>↑ 这张真实模型输出出自谁手？<a href="#/game">来猜 →</a>（来源：${escapeHtml(heroSrc)}）</figcaption>
       </figure>
     </section>
 
