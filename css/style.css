@@ -467,6 +467,7 @@ code, pre {
 /* ---------- 图片灯箱（原生 dialog + 黄漫风） ---------- */
 dialog.lb {
   padding: 0;
+  margin: auto; /* 关键：全局 * { margin:0 } 会覆盖 dialog 的 UA 居中样式，必须显式加回 */
   border: var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
